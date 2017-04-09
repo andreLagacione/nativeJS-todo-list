@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<title>NativeJS TODO list</title>
+		
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2, initial-scale=1.0" />
+
+        <link rel="shortcut icon" href="favicon.png" />
+
+        <!-- import css files -->
+		<link type="text/css" rel="stylesheet" media="all" href="gh-pages/styles/main.min.css" />
+		<link type="text/css" rel="stylesheet" media="all" href="gh-pages/vendor/font-awesome/css/font-awesome.min.css" />
+	</head>
+	
+	<body class="default-theme relative">
+		<aside id="main-menu-content">
+			<h1 id="title-aplication">JS TodoList</h1>
+
+			<header id="top-menu">
+				<div id="user-content" class="full-hidden">
+					<div class="avatar left"><img src="images/sidebar-user-avatar.jpg" alt="" /></div>
+
+					<div class="user-info left">
+						<strong class="name">André Lagacione</strong>
+						<a href="#" title="Perfil" class="info">Perfil</a>
+					</div>
+					<!--/user-info-->
+				</div>
+				<!--/user-content-->
+
+				<form action="#" method="post" id="search-component" class="full-hidden">
+					<fieldset>
+						<input type="text" class="box-search left" name="search" placeholder="Search..." />
+						<buttom type="submit" class="btn-search right"><i class="icon fa fa-search" aria-hidden="true"></i></buttom>
+					</fieldset>
+				</form>
+				<!--/search-component-->
+			</header>
+			<!--/top-menu-->
+
+			<div class="navigation-text">main navigation</div>
+
+			<nav id="main-menu">
+				<ul>
+					<li class="item full-hidden relative">
+						<a href="#" title="Dashboard">
+							<span class="icon icon-category left"><i class="fa fa-motorcycle" aria-hidden="true"></i></span>
+							<span class="text left">Dashboard</span>
+							<span class="icon icon-sub-category right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<!--/main-menu-->
+		</aside>
+		<!--/main-menu-content-->
+
+		<main id="content-application">
+			<header id="top-aplication" class="full-hidden">
+				<div class="item left">
+					<button type="button" class="control-menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
+				</div>
+				<!--/item.left-->
+
+				<div class="user-config right">
+					<div class="user left">
+						<div class="avatar"><img src="images/" alt="user" /></div>
+						<div class="name">André Lagacione</div>
+					</div>
+					<!--/user-->
+
+					<div class="menu-configuration relative">
+						<button type="button" class="control-configuration"><i class="fa fa-cogs" aria-hidden="true"></i></button>
+
+						<div class="content-configuration">
+							<nav class="item my-details">
+								<ul>
+									<li><a href="#" title="Perfil">Perfil</a></li>
+									<li><a href="#" title="Configurations">Configurations</a></li>
+									<li><a href="#" title="My tasks">My tasks</a></li>
+									<li><a href="#" title="My stats">My stats</a></li>
+								</ul>
+							</nav>
+							<!--/item.my-details-->
+
+							<div class="item themes">
+								<div class="title">Themes</div>
+
+								<div class="my-themes full-hidden">
+									<div class="theme-item">
+										<div class="theme-box" style="background-color: #;">
+											<div class="selected-indicator" style="background-color: #;"></div>
+										</div>
+										<!--/theme-box-->
+									</div>
+									<!--/theme-item-->
+								</div>
+								<!--/my-themes-->
+							</div>
+							<!--/item.themes-->
+						</div>
+						<!--/content-configuration-->
+					</div>
+					<!--/menu-configuration-->
+				</div>
+				<!--/user-config-->
+			</header>
+			<!--/top-aplication-->
+		</main>
+		<!--/content-application-->
+
+		<script src="gh-pages/scripts/main.min.js"></script>
+	</body>
+</html>
