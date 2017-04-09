@@ -56,7 +56,7 @@ gulp.task('serve', serve({
 
 gulp.task('vendor', function() {
   gulp.src([
-    'src/vendor/**/*.{js,css}',
+    'src/vendor/**/*.*',
     '!**/*test*/**',
     '!**/*test*',
     '!**/index*',

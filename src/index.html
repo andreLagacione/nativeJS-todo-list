@@ -13,40 +13,42 @@
 		<link type="text/css" rel="stylesheet" media="all" href="vendor/font-awesome/css/font-awesome.min.css" />
 	</head>
 	
-	<body>
+	<body class="default-theme relative">
 		<aside id="main-menu-content">
 			<h1 id="title-aplication">JS TodoList</h1>
 
 			<header id="top-menu">
 				<div id="user-content" class="full-hidden">
-					<div class="avatar left"><img src="images/" alt="" /></div>
+					<div class="avatar left"><img src="images/sidebar-user-avatar.jpg" alt="" /></div>
 
 					<div class="user-info left">
 						<strong class="name">André Lagacione</strong>
-						<div class="info">Perfil</div>
+						<a href="#" title="Perfil" class="info">Perfil</a>
 					</div>
 					<!--/user-info-->
 				</div>
 				<!--/user-content-->
 
-				<form action="#" method="post" id="search-component">
+				<form action="#" method="post" id="search-component" class="full-hidden">
 					<fieldset>
-						<input type="text" class="box-search" name="search" placeholder="Search..." />
-						<buttom type="submit" class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></buttom>
+						<input type="text" class="box-search left" name="search" placeholder="Search..." />
+						<buttom type="submit" class="btn-search right"><i class="icon fa fa-search" aria-hidden="true"></i></buttom>
 					</fieldset>
 				</form>
 				<!--/search-component-->
 			</header>
 			<!--/top-menu-->
 
-			<div class="navication-text">main navigation</div>
+			<div class="navigation-text">main navigation</div>
 
 			<nav id="main-menu">
 				<ul>
-					<li class="item full-hidden">
-						<span class="icon-category left"><i class="fa fa-motorcycle" aria-hidden="true"></i></span>
-						<span class="text left">Dashboard</span>
-						<span class="icon-sub-category right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+					<li class="item full-hidden relative">
+						<a href="#" title="Dashboard">
+							<span class="icon icon-category left"><i class="fa fa-motorcycle" aria-hidden="true"></i></span>
+							<span class="text left">Dashboard</span>
+							<span class="icon icon-sub-category right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+						</a>
 					</li>
 				</ul>
 			</nav>

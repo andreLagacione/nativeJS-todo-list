@@ -1,0 +1,36 @@
+// DEFAULT COLORS
+$white: #fff;
+$black: #000;
+$red: #f00;
+
+// THEME COLORS
+$default-theme: #3c8dbc;
+
+// SIZES
+$default-size: 10px;
+
+// MIXINS
+@mixin ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin transition-ease($value) {
+	-webkit-transition: $value all ease-in-out;
+	   -moz-transition: $value all ease-in-out;
+	    -ms-transition: $value all ease-in-out;
+		 -o-transition: $value all ease-in-out;
+			transition: $value all ease-in-out;
+}
+
+
+
+
+
+
+// MEDIAS QUERIES
+$media-desk-larger: "only screen and (min-width: 1201px)";
+$media-desk-small: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$media-tablet: "only screen and (min-width: 768px) and (max-width: 991px)";
+$media-cellphone: "only screen and (max-width: 767px)";

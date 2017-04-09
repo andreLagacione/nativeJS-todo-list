@@ -1,0 +1,156 @@
+@import '_variables';
+
+body.default-theme {
+	#main-menu-content {
+		width: 200px;
+		background-color: darken($default-theme, 20%);
+		height: 100%;
+		overflow-y: auto;
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		#title-aplication {
+			display: block;
+			background-color: $default-theme;
+			height: 50px;
+			font-weight: bold;
+			font-size: 25px;
+			color: $white;
+			text-align: center;
+			line-height: 50px;
+		}
+
+		#top-menu {
+			background-color: darken($default-theme, 25%);
+			padding: $default-size;
+
+			#user-content {
+				.avatar {
+					width: 35px;
+					height: 35px;
+					border: 1px solid darken($default-theme, 35%);
+					border-radius: 50%;
+					overflow: hidden;
+				}
+
+				.user-info {
+					width: 130px;
+					margin: 0 0 0 15px;
+
+					.name {
+						@include ellipsis;
+						font-size: 14px;
+						color: $white;
+						line-height: 18px;
+						display: block;
+					}
+
+					.info {
+						font-size: 12px;
+						color: $white;
+					}
+
+				} //.user-info
+
+			} //#user-content
+
+			#search-component {
+				margin: $default-size 0 0;
+
+				.box-search {
+					width: 80%;
+					height: 30px;
+					background-color: darken($default-theme, 15%);
+					font-size: 12px;
+					color: $white;
+					padding: 10px;
+					border: 0;
+					border-radius: 3px 0 0 3px;
+				}
+
+				.btn-search {
+					background-color: darken($default-theme, 15%);
+					width: 20%;
+					height: 30px;
+					border-radius: 0 3px 3px 0;
+					text-align: center;
+					padding: 6px 0 0;
+					cursor: pointer;
+
+					.icon {
+						color: $white;
+					}
+
+					&:hover {
+						background-color: darken($default-theme, 20%)
+					}
+				}
+
+			} //#search-component
+
+		} //#top-menu
+
+		.navigation-text {
+			background-color: darken($default-theme, 30%);
+			padding: 10px;
+			font-size: 12px;
+			color: $white;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		#main-menu {
+			* {
+				@include transition-ease(.3s);
+			}
+
+			.item {
+				display: block;
+				padding: 10px 5px 10px 10px;
+				border-bottom: 1px solid darken($default-theme, 10%);
+
+				a {
+					display: block;
+					color: $white;
+
+					.text {
+						@include ellipsis;
+						width: 115px;
+					}
+
+					.icon {
+						width: 25px;
+						text-align: center;
+
+						&.icon-category {
+							margin: 0 5px 0 0;
+						}
+
+						&.icon-sub-category {
+							margin: 0 0 0 5px;
+						}
+					}
+
+				} //.item a				
+
+				&:hover {
+					background-color: darken($default-theme, 10%);
+				}
+
+				&::after {
+					background-color: $default-theme;
+					height: 100%;
+					width: 5px;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+
+			} //.item
+
+		} //#main-menu
+
+	} //#main-menu-content
+
+} //body.default-theme
