@@ -2,6 +2,10 @@
 
 body.default-theme {
 	#main-menu-content {
+		* {
+			@include transition-ease(.3s)
+		}
+
 		width: 200px;
 		background-color: darken($default-theme, 20%);
 		height: 100%;
@@ -101,22 +105,23 @@ body.default-theme {
 		}
 
 		#main-menu {
-			* {
-				@include transition-ease(.3s);
+			li, a {
+				display: block;
 			}
 
 			.item {
-				display: block;
-				padding: 10px 5px 10px 10px;
 				border-bottom: 1px solid darken($default-theme, 10%);
 
 				a {
-					display: block;
 					color: $white;
+					padding: 10px 5px 10px 10px;
+					overflow: hidden;
 
 					.text {
 						@include ellipsis;
-						width: 115px;
+						width: 105px;
+						font-size: 14px;
+						line-height: 18px;
 					}
 
 					.icon {
@@ -124,7 +129,7 @@ body.default-theme {
 						text-align: center;
 
 						&.icon-category {
-							margin: 0 5px 0 0;
+							margin: 1px 5px 0 0;
 						}
 
 						&.icon-sub-category {
@@ -134,18 +139,42 @@ body.default-theme {
 
 				} //.item a				
 
-				&:hover {
-					background-color: darken($default-theme, 10%);
+				&:hover,
+				&.active {
+					> a {
+						background-color: darken($default-theme, 10%);
+					}
+
+					&::after {
+						width: 5px;
+					}
 				}
 
 				&::after {
+					content: '';
 					background-color: $default-theme;
 					height: 100%;
-					width: 5px;
+					width: 0;
 					position: absolute;
 					left: 0;
 					top: 0;
 				}
+
+				.sub-category {
+					height: 0;
+
+					a {
+						@include ellipsis;
+						padding: 10px 20px;
+						font-size: 12px;
+						text-decoration: none;
+						border-top: 1px solid darken($default-theme, 25%);
+
+						&:hover {
+							background-color: darken($default-theme, 25%);
+						}
+					}
+				} //.sub-category
 
 			} //.item
 
