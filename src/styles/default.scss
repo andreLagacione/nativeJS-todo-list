@@ -74,3 +74,8 @@ a:hover {
 .right {
 	float: right;
 }
+
+#content-application {
+	width: calc(100% - 200px);
+	float: right;
+}

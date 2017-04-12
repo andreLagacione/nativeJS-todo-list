@@ -112,10 +112,11 @@ body.default-theme {
 			.item {
 				border-bottom: 1px solid darken($default-theme, 10%);
 
-				a {
+				> a {
 					color: $white;
 					padding: 10px 5px 10px 10px;
 					overflow: hidden;
+					position: relative;
 
 					.text {
 						@include ellipsis;
@@ -137,27 +138,36 @@ body.default-theme {
 						}
 					}
 
+					&::after {
+						content: '';
+						background-color: $default-theme;
+						height: 100%;
+						width: 0;
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+
 				} //.item a				
 
-				&:hover,
-				&.active {
+				&:hover {
 					> a {
 						background-color: darken($default-theme, 10%);
 					}
-
-					&::after {
-						width: 5px;
-					}
 				}
 
-				&::after {
-					content: '';
-					background-color: $default-theme;
-					height: 100%;
-					width: 0;
-					position: absolute;
-					left: 0;
-					top: 0;
+				&.active {
+					> a {
+						background-color: darken($default-theme, 10%);
+
+						&::after {
+							width: 5px;
+						}
+					}
+
+					.sub-category {
+						height: auto;
+					}
 				}
 
 				.sub-category {
@@ -165,6 +175,7 @@ body.default-theme {
 
 					a {
 						@include ellipsis;
+						color: $white;
 						padding: 10px 20px;
 						font-size: 12px;
 						text-decoration: none;
@@ -174,6 +185,7 @@ body.default-theme {
 							background-color: darken($default-theme, 25%);
 						}
 					}
+
 				} //.sub-category
 
 			} //.item
