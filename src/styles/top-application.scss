@@ -4,4 +4,148 @@
 	background-color: lighten($default-theme, 7%);
 	height: 50px;
 
+	.control-menu {
+		background-color: darken($default-theme, 5%);
+		border: 1px solid darken($default-theme, 15%);
+		padding: 7px 10px;
+		color: $white;
+		cursor: pointer;
+		margin: 8px 0 0 15px;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: darken($default-theme, 15%);
+		}
+	}
+
+	.user-config {
+		background-color: darken($default-theme, 10%);
+		padding: 10px;
+		height: 50px;
+
+		.user {
+			margin: 0 25px 0 0;
+			overflow: hidden;
+
+			.avatar {
+				width: 35px;
+				height: 35px;
+				overflow: hidden;
+				margin: 0 10px 0 0;
+				float: left;
+				border-radius: 50%;
+			}
+
+			.name {
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 33px;
+				color: $white;
+				float: left;
+			}
+
+		} //.user
+
+		.time-now {
+			margin: 0 25px 0 0;
+			color: $white;
+			font-size: 12px;
+			line-height: 35px;
+
+			#day {
+				font-weight: bold;
+			}
+
+		} //.time-now
+
+		.menu-configuration {
+			.control-configuration {
+				@extend .control-menu;
+				margin: 0;
+			}
+
+			.content-configuration {
+				background-color: lighten($default-theme, 7%);
+				width: 150px;
+				position: absolute;
+				right: 0;
+				top: 40px;
+				display: none;
+
+				&::after {
+					content: '';
+					width: 10px;
+					height: 10px;
+					border-color: transparent transparent lighten($default-theme, 7%);
+					border-width: 7px;
+					border-style: solid;
+					position: absolute;
+					right: 10px;
+					top: -14px;
+				}
+
+				.my-details {
+					* {
+						display: block;
+					}
+
+					a {
+						font-size: 13px;
+						color: $white;
+						padding: 7px 12px;
+						border-bottom: 1px solid darken($default-theme, 10%);
+						text-decoration: none;
+
+						&:hover {
+							background-color: darken($default-theme, 10%);
+						}
+					}
+
+				} //.my-details
+
+				.themes {
+					background-color: darken($default-theme, 10%);
+					padding: 7px 12px;
+
+					.title {
+						font-weight: bold;
+						font-size: 14px;
+						color: $white;
+					}
+
+					.theme-item {
+						width: calc(100% / 4);
+						margin: 10px 0 0;
+						text-align: center;
+						float: left;
+
+						.theme-box {
+							width: 25px;
+							height: 25px;
+							padding: 5px;
+							display: inline-block;
+							cursor: pointer;
+							border-radius: 50%;
+
+							.selected-indicator {
+								width: 100%;
+								height: 100%;
+								border-radius: 50%;
+
+								&.ative {
+									background-color: $white !important;
+								}
+							}
+						}
+
+					} //.theme-item
+
+				} //.themes
+
+			} //.content-configuration
+
+		} //.menu-configuration
+
+	} //.user-config
+
 } //#top-aplication
