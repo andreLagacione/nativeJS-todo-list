@@ -1,7 +1,11 @@
 window.onload = function loadWindow() {
 	var now = new Date();
 	getDateDate(now);
-	getHour(now);
+	getHour();
+
+	setInterval(function() {
+		getHour();
+	}, 1000);
 };
 
 function actionsSidebarMenu(item) {
@@ -44,9 +48,9 @@ function getDateDate(now) {
 	document.getElementById('day').innerHTML = day + '/' + month + '/' + year;
 };
 
-function getHour(now) {
-	setInterval(function() {
-		var hour = now.getHours(),
+function getHour() {
+	var now = new Date(),
+		hour = now.getHours(),
 		minute = now.getMinutes(),
 		seconds = now.getSeconds();
 
@@ -55,5 +59,12 @@ function getHour(now) {
 	if (seconds < 10) seconds = '0' + seconds;
 
 	document.getElementById('hour').innerHTML = hour + ':' + minute + ':' + seconds;
-	}, 1000);
+};
+
+function showMenuDetails() {
+	document.getElementsByClassName('content-configuration')[0].style.display = 'block';
+};
+
+function hiddenMenuDetails() {
+	document.getElementsByClassName('content-configuration')[0].style.display = 'none';
 };
