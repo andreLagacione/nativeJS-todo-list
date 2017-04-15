@@ -62,9 +62,22 @@ function getHour() {
 };
 
 function showMenuDetails() {
-	document.getElementsByClassName('content-configuration')[0].style.display = 'block';
+	document.getElementsByClassName('content-configuration')[0].classList.add('showing');
+	document.getElementsByClassName('content-configuration')[0].classList.remove('hiding');
 };
 
 function hiddenMenuDetails() {
-	document.getElementsByClassName('content-configuration')[0].style.display = 'none';
+	document.getElementsByClassName('content-configuration')[0].classList.add('hiding');
+	document.getElementsByClassName('content-configuration')[0].classList.remove('showing');
 };
+
+function changeTheme(theme) {
+	var selectedTheme = theme,
+			outherThemes = document.querySelectorAll('.theme-box');
+
+		for (var i = 0; i < outherThemes.length; i++) {
+			outherThemes[i].classList.remove('active');
+		}
+
+		selectedTheme.classList.add('active')
+}
