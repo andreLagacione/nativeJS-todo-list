@@ -73,11 +73,16 @@ function hiddenMenuDetails() {
 
 function changeTheme(theme) {
 	var selectedTheme = theme,
-			outherThemes = document.querySelectorAll('.theme-box');
+			outherThemes = document.querySelectorAll('.theme-box'),
+			definedTheme = theme.getAttribute('theme-name'),
+			bodyTag = document.getElementsByTagName('body'),
+			atualTheme = bodyTag[0].getAttribute('class');
 
 		for (var i = 0; i < outherThemes.length; i++) {
 			outherThemes[i].classList.remove('active');
 		}
 
-		selectedTheme.classList.add('active')
+		selectedTheme.classList.add('active');
+		bodyTag[0].classList.remove(atualTheme);
+		bodyTag[0].classList.add(definedTheme);
 }

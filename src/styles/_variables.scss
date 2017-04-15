@@ -3,11 +3,16 @@ $white: #fff;
 $black: #000;
 $red: #f00;
 
-// THEME COLORS
-$default-theme: #3c8dbc;
-
 // SIZES
 $default-size: 10px;
+
+// CONDITIONAL THEMES
+$themes: (
+		default-theme: (color: #3c8dbc),
+		orange-theme: (color: #ff8000),
+		purple-theme: (color: #ff00ee),
+		green-theme: (color: #036300)
+);
 
 // MIXINS
 @mixin ellipsis {
@@ -20,8 +25,8 @@ $default-size: 10px;
 	-webkit-transition: $value all ease-in-out;
 	   -moz-transition: $value all ease-in-out;
 	    -ms-transition: $value all ease-in-out;
-		 -o-transition: $value all ease-in-out;
-			transition: $value all ease-in-out;
+		   -o-transition: $value all ease-in-out;
+					transition: $value all ease-in-out;
 }
 
 

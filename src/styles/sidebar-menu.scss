@@ -1,197 +1,205 @@
 @import '_variables';
 
-body.default-theme {
-	#main-menu-content {
-		* {
-			@include transition-ease(.3s)
-		}
+body {
+	@each $key, $value in $themes {
+		&.#{$key} {
+			$default-theme: map-get($value, color);
 
-		width: 200px;
-		background-color: darken($default-theme, 20%);
-		height: 100%;
-		overflow-y: auto;
-		position: fixed;
-		top: 0;
-		left: 0;
-
-		#title-aplication {
-			display: block;
-			background-color: $default-theme;
-			height: 50px;
-			font-weight: bold;
-			font-size: 25px;
-			color: $white;
-			text-align: center;
-			line-height: 50px;
-		}
-
-		#top-menu {
-			background-color: darken($default-theme, 25%);
-			padding: $default-size;
-
-			#user-content {
-				.avatar {
-					width: 35px;
-					height: 35px;
-					border: 1px solid darken($default-theme, 35%);
-					border-radius: 50%;
-					overflow: hidden;
+			#main-menu-content {
+				* {
+					@include transition-ease(.3s)
 				}
 
-				.user-info {
-					width: 130px;
-					margin: 0 0 0 15px;
+				width: 200px;
+				background-color: darken($default-theme, 20%);
+				height: 100%;
+				overflow-y: auto;
+				position: fixed;
+				top: 0;
+				left: 0;
 
-					.name {
-						@include ellipsis;
-						font-size: 14px;
-						color: $white;
-						line-height: 18px;
+				#title-aplication {
+					display: block;
+					background-color: $default-theme;
+					height: 50px;
+					font-weight: bold;
+					font-size: 25px;
+					color: $white;
+					text-align: center;
+					line-height: 50px;
+				}
+
+				#top-menu {
+					background-color: darken($default-theme, 25%);
+					padding: $default-size;
+
+					#user-content {
+						.avatar {
+							width: 35px;
+							height: 35px;
+							border: 1px solid darken($default-theme, 35%);
+							border-radius: 50%;
+							overflow: hidden;
+						}
+
+						.user-info {
+							width: 130px;
+							margin: 0 0 0 15px;
+
+							.name {
+								@include ellipsis;
+								font-size: 14px;
+								color: $white;
+								line-height: 18px;
+								display: block;
+							}
+
+							.info {
+								font-size: 12px;
+								color: $white;
+							}
+
+						} //.user-info
+
+					} //#user-content
+
+					#search-component {
+						margin: $default-size 0 0;
+
+						.box-search {
+							width: 80%;
+							height: 30px;
+							background-color: darken($default-theme, 15%);
+							font-size: 12px;
+							color: $white;
+							padding: 10px;
+							border: 0;
+							border-radius: 3px 0 0 3px;
+						}
+
+						.btn-search {
+							background-color: darken($default-theme, 15%);
+							width: 20%;
+							height: 30px;
+							border-radius: 0 3px 3px 0;
+							text-align: center;
+							padding: 6px 0 0;
+							cursor: pointer;
+
+							.icon {
+								color: $white;
+							}
+
+							&:hover {
+								background-color: darken($default-theme, 20%)
+							}
+						}
+
+					} //#search-component
+
+				} //#top-menu
+
+				.navigation-text {
+					background-color: darken($default-theme, 30%);
+					padding: 10px;
+					font-size: 12px;
+					color: $white;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+
+				#main-menu {
+					li, a {
 						display: block;
 					}
 
-					.info {
-						font-size: 12px;
-						color: $white;
-					}
+					.item {
+						border-bottom: 1px solid darken($default-theme, 10%);
 
-				} //.user-info
+						> a {
+							color: $white;
+							padding: 10px 5px 10px 10px;
+							overflow: hidden;
+							position: relative;
 
-			} //#user-content
+							.text {
+								@include ellipsis;
+								width: 105px;
+								font-size: 14px;
+								line-height: 18px;
+							}
 
-			#search-component {
-				margin: $default-size 0 0;
+							.icon {
+								width: 25px;
+								text-align: center;
 
-				.box-search {
-					width: 80%;
-					height: 30px;
-					background-color: darken($default-theme, 15%);
-					font-size: 12px;
-					color: $white;
-					padding: 10px;
-					border: 0;
-					border-radius: 3px 0 0 3px;
-				}
+								&.icon-category {
+									margin: 1px 5px 0 0;
+								}
 
-				.btn-search {
-					background-color: darken($default-theme, 15%);
-					width: 20%;
-					height: 30px;
-					border-radius: 0 3px 3px 0;
-					text-align: center;
-					padding: 6px 0 0;
-					cursor: pointer;
+								&.icon-sub-category {
+									margin: 0 0 0 5px;
+								}
+							}
 
-					.icon {
-						color: $white;
-					}
+							&::after {
+								content: '';
+								background-color: $default-theme;
+								height: 100%;
+								width: 0;
+								position: absolute;
+								left: 0;
+								top: 0;
+							}
 
-					&:hover {
-						background-color: darken($default-theme, 20%)
-					}
-				}
-
-			} //#search-component
-
-		} //#top-menu
-
-		.navigation-text {
-			background-color: darken($default-theme, 30%);
-			padding: 10px;
-			font-size: 12px;
-			color: $white;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
-
-		#main-menu {
-			li, a {
-				display: block;
-			}
-
-			.item {
-				border-bottom: 1px solid darken($default-theme, 10%);
-
-				> a {
-					color: $white;
-					padding: 10px 5px 10px 10px;
-					overflow: hidden;
-					position: relative;
-
-					.text {
-						@include ellipsis;
-						width: 105px;
-						font-size: 14px;
-						line-height: 18px;
-					}
-
-					.icon {
-						width: 25px;
-						text-align: center;
-
-						&.icon-category {
-							margin: 1px 5px 0 0;
-						}
-
-						&.icon-sub-category {
-							margin: 0 0 0 5px;
-						}
-					}
-
-					&::after {
-						content: '';
-						background-color: $default-theme;
-						height: 100%;
-						width: 0;
-						position: absolute;
-						left: 0;
-						top: 0;
-					}
-
-				} //.item a				
-
-				&:hover {
-					> a {
-						background-color: darken($default-theme, 10%);
-					}
-				}
-
-				&.active {
-					> a {
-						background-color: darken($default-theme, 10%);
-
-						&::after {
-							width: 5px;
-						}
-					}
-
-					.sub-category {
-						height: auto;
-					}
-				}
-
-				.sub-category {
-					height: 0;
-
-					a {
-						@include ellipsis;
-						color: $white;
-						padding: 10px 20px;
-						font-size: 12px;
-						text-decoration: none;
-						border-top: 1px solid darken($default-theme, 25%);
+						} //.item a
 
 						&:hover {
-							background-color: darken($default-theme, 25%);
+							> a {
+								background-color: darken($default-theme, 10%);
+							}
 						}
-					}
 
-				} //.sub-category
+						&.active {
+							> a {
+								background-color: darken($default-theme, 10%);
 
-			} //.item
+								&::after {
+									width: 5px;
+								}
+							}
 
-		} //#main-menu
+							.sub-category {
+								height: auto;
+							}
+						}
 
-	} //#main-menu-content
+						.sub-category {
+							height: 0;
+
+							a {
+								@include ellipsis;
+								color: $white;
+								padding: 10px 20px;
+								font-size: 12px;
+								text-decoration: none;
+								border-top: 1px solid darken($default-theme, 25%);
+
+								&:hover {
+									background-color: darken($default-theme, 25%);
+								}
+							}
+
+						} //.sub-category
+
+					} //.item
+
+				} //#main-menu
+
+			} //#main-menu-content
+
+		} //@each - theme
+
+	} //@each
 
 } //body.default-theme

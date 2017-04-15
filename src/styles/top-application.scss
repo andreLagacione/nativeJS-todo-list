@@ -1,164 +1,175 @@
 @import '_variables';
 
-#top-aplication {
-	background-color: lighten($default-theme, 7%);
-	height: 50px;
+body {
+  @each $key, $value in $themes {
+		&.#{$key} {
+			$default-theme: map-get($value, color);
 
-	.control-menu {
-		background-color: darken($default-theme, 5%);
-		border: 1px solid darken($default-theme, 15%);
-		padding: 7px 10px;
-		color: $white;
-		cursor: pointer;
-		margin: 8px 0 0 15px;
-		border-radius: 5px;
+      #top-aplication {
+      	background-color: lighten($default-theme, 7%);
+      	height: 50px;
 
-		&:hover {
-			background-color: darken($default-theme, 15%);
-		}
-	}
+      	.control-menu {
+      		background-color: darken($default-theme, 5%);
+      		border: 1px solid darken($default-theme, 15%);
+      		padding: 7px 10px;
+      		color: $white;
+      		cursor: pointer;
+      		margin: 8px 0 0 15px;
+      		border-radius: 5px;
 
-	.user-config {
-		background-color: darken($default-theme, 10%);
-		padding: 10px;
-		height: 50px;
+      		&:hover {
+      			background-color: darken($default-theme, 15%);
+      		}
+      	}
 
-		.user {
-			margin: 0 25px 0 0;
-			overflow: hidden;
+      	.user-config {
+      		background-color: darken($default-theme, 10%);
+      		padding: 10px;
+      		height: 50px;
 
-			.avatar {
-				width: 35px;
-				height: 35px;
-				overflow: hidden;
-				margin: 0 10px 0 0;
-				float: left;
-				border-radius: 50%;
-			}
+      		.user {
+      			margin: 0 25px 0 0;
+      			overflow: hidden;
 
-			.name {
-				font-size: 16px;
-				font-weight: bold;
-				line-height: 33px;
-				color: $white;
-				float: left;
-			}
+      			.avatar {
+      				width: 35px;
+      				height: 35px;
+      				overflow: hidden;
+      				margin: 0 10px 0 0;
+      				float: left;
+      				border-radius: 50%;
+      			}
 
-		} //.user
+      			.name {
+      				font-size: 16px;
+      				font-weight: bold;
+      				line-height: 33px;
+      				color: $white;
+      				float: left;
+      			}
 
-		.time-now {
-			margin: 0 25px 0 0;
-			color: $white;
-			font-size: 12px;
-			line-height: 35px;
+      		} //.user
 
-			#day {
-				font-weight: bold;
-			}
+      		.time-now {
+      			margin: 0 25px 0 0;
+      			color: $white;
+      			font-size: 12px;
+      			line-height: 35px;
 
-		} //.time-now
+      			#day {
+      				font-weight: bold;
+      			}
 
-		.menu-configuration {
-			.control-configuration {
-				@extend .control-menu;
-				margin: 0;
-			}
+      		} //.time-now
 
-			.content-configuration {
-				background-color: lighten($default-theme, 7%);
-				width: 150px;
-				position: absolute;
-				right: 0;
-				top: 40px;
+      		.menu-configuration {
+      			.control-configuration {
+      				@extend .control-menu;
+      				margin: 0;
+      			}
 
-				&.showing {
-					@include transition-ease(.3s);
-					display: block;
-					opacity: 1;
-				}
+      			.content-configuration {
+      				background-color: lighten($default-theme, 7%);
+      				width: 150px;
+      				position: absolute;
+      				right: 0;
+      				top: 40px;
 
-				&.hiding {
-					@include transition-ease(.3s);
-					display: block;
-					opacity: 0;
-				}
+      				&.showing {
+      					@include transition-ease(.3s);
+      					display: block;
+      					opacity: 1;
+      				}
 
-				&::after {
-					content: '';
-					width: 10px;
-					height: 10px;
-					border-color: transparent transparent lighten($default-theme, 7%);
-					border-width: 7px;
-					border-style: solid;
-					position: absolute;
-					right: 10px;
-					top: -14px;
-				}
+      				&.hiding {
+      					@include transition-ease(.3s);
+      					display: block;
+      					opacity: 0;
+      				}
 
-				.my-details {
-					* {
-						display: block;
-					}
+      				&::after {
+      					content: '';
+      					width: 10px;
+      					height: 10px;
+      					border-color: transparent transparent lighten($default-theme, 7%);
+      					border-width: 7px;
+      					border-style: solid;
+      					position: absolute;
+      					right: 10px;
+      					top: -14px;
+      				}
 
-					a {
-						font-size: 13px;
-						color: $white;
-						padding: 7px 12px;
-						border-bottom: 1px solid darken($default-theme, 10%);
-						text-decoration: none;
+      				.my-details {
+      					* {
+      						display: block;
+      					}
 
-						&:hover {
-							background-color: darken($default-theme, 10%);
-						}
-					}
+      					a {
+      						font-size: 13px;
+      						color: $white;
+      						padding: 7px 12px;
+      						border-bottom: 1px solid darken($default-theme, 10%);
+      						text-decoration: none;
 
-				} //.my-details
+      						&:hover {
+      							background-color: darken($default-theme, 10%);
+      						}
+      					}
 
-				.themes {
-					background-color: darken($default-theme, 10%);
-					padding: 7px 12px;
+      				} //.my-details
 
-					.title {
-						font-weight: bold;
-						font-size: 14px;
-						color: $white;
-					}
+      				.themes {
+      					background-color: darken($default-theme, 10%);
+      					padding: 7px 12px;
 
-					.theme-item {
-						width: calc(100% / 4);
-						margin: 10px 0 0;
-						text-align: center;
-						float: left;
+      					.title {
+      						font-weight: bold;
+      						font-size: 14px;
+      						color: $white;
+      					}
 
-						.theme-box {
-							width: 25px;
-							height: 25px;
-							padding: 7px;
-							display: inline-block;
-							cursor: pointer;
-							border-radius: 50%;
+      					.theme-item {
+      						width: calc(100% / 4);
+      						margin: 10px 0 0;
+      						text-align: center;
+      						float: left;
 
-							.selected-indicator {
-								width: 100%;
-								height: 100%;
-								border-radius: 50%;
-							}
+      						.theme-box {
+      							width: 25px;
+      							height: 25px;
+      							padding: 7px;
+      							display: inline-block;
+      							cursor: pointer;
+      							border-radius: 50%;
 
-							&.active {
-								.selected-indicator {
-									background-color: $white !important;
-								}
-							}
-						}
+      							.selected-indicator {
+      								width: 100%;
+      								height: 100%;
+      								border-radius: 50%;
+      							}
 
-					} //.theme-item
+      							&.active {
+      								.selected-indicator {
+      									background-color: $white !important;
+      								}
+      							}
+      						}
 
-				} //.themes
+      					} //.theme-item
 
-			} //.content-configuration
+      				} //.themes
 
-		} //.menu-configuration
+      			} //.content-configuration
 
-	} //.user-config
+      		} //.menu-configuration
 
-} //#top-aplication
+      	} //.user-config
+
+      } //#top-aplication
+
+    } //@each - theme
+
+  } //@each
+
+} //body
