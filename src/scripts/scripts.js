@@ -12,7 +12,15 @@ function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
 		hasClass = item.className.split(' '),
 		allIconIndicator = document.querySelectorAll('.icon-sub-category i'),
-		iconIndicatorItem = item.querySelectorAll('.icon-sub-category i');
+		iconIndicatorItem = item.querySelectorAll('.icon-sub-category i'),
+		itemSubcategoryList = item.querySelectorAll('.sub-category'),
+		allSubcategariesList = document.querySelectorAll('.sub-category'),
+		linksSubMenu = item.querySelectorAll('.sub-category > li'),
+		heightSubcategory = linksSubMenu.length * 33;
+
+	for (var i = 0; i < allSubcategariesList.length; i++) {
+		allSubcategariesList[i].style.height = 0;
+	}
 
 	for (var i = 0; i < categories.length; i++) {
 		categories[i].classList.remove('active');
@@ -26,11 +34,14 @@ function actionsSidebarMenu(item) {
 	for (var i = 0; i < hasClass.length; i++) {
 		if (hasClass[i] == 'active') {
 			item.classList.remove('active');
+			itemSubcategoryList[0].style.height = 0;
 			iconIndicatorItem[0].classList.remove('fa-chevron-down');
 			iconIndicatorItem[0].classList.add('fa-chevron-right');
 			break;
 		} else {
+			console.log(itemSubcategoryList);
 			item.classList.add('active');
+			itemSubcategoryList[0].style.height = heightSubcategory + 'px';
 			iconIndicatorItem[0].classList.remove('fa-chevron-right');
 			iconIndicatorItem[0].classList.add('fa-chevron-down');
 		}

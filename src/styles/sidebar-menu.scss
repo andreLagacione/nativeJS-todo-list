@@ -168,10 +168,6 @@ body {
 									width: 5px;
 								}
 							}
-
-							.sub-category {
-								height: auto;
-							}
 						}
 
 						.sub-category {
@@ -183,6 +179,7 @@ body {
 								padding: 10px 20px;
 								font-size: 12px;
 								text-decoration: none;
+								height: 33px;
 								border-top: 1px solid darken($default-theme, 25%);
 
 								&:hover {
