@@ -1,11 +1,21 @@
 @import '_reset';
 @import '_variables';
 
+html {
+	height: 100%;
+}
+
 body {
 	font-family: arial, tahoma, helvetica, sans-serif;
 	min-width: 320px;
+	height: 100%;
 	overflow-x: hidden;
 	position: relative;
+
+	&.show-menu {
+		@include transition-ease(.3s);
+		@include transform3d(200px, 0, 0);
+	}
 }
 
 *, *:after, *:before {
@@ -73,10 +83,5 @@ a:hover {
 }
 
 .right {
-	float: right;
-}
-
-#content-application {
-	width: calc(100% - 200px);
 	float: right;
 }

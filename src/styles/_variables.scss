@@ -29,6 +29,14 @@ $themes: (
 					transition: $value all ease-in-out;
 }
 
+@mixin transform3d($valueX, $valueY, $valueZ) {
+	-webkit-transition: translate3d($valueX $valueY $valueZ);
+	   -moz-transition: translate3d($valueX $valueY $valueZ);
+	    -ms-transition: translate3d($valueX $valueY $valueZ);
+		   -o-transition: translate3d($valueX $valueY $valueZ);
+					transition: translate3d($valueX $valueY $valueZ);
+}
+
 
 
 

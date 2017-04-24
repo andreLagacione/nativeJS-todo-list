@@ -6,6 +6,8 @@ body {
 			$default-theme: map-get($value, color);
 
 			#main-menu-content {
+				height: 100%;
+
 				* {
 					@include transition-ease(.3s)
 				}
@@ -16,7 +18,7 @@ body {
 				overflow-y: auto;
 				position: fixed;
 				top: 0;
-				left: 0;
+				left: -200px;
 
 				#title-aplication {
 					display: block;
@@ -32,6 +34,7 @@ body {
 				#top-menu {
 					background-color: darken($default-theme, 25%);
 					padding: $default-size;
+					height: 95px;
 
 					#user-content {
 						.avatar {
@@ -106,9 +109,13 @@ body {
 					color: $white;
 					font-weight: bold;
 					text-transform: uppercase;
+					height: 32px;
 				}
 
 				#main-menu {
+					height: calc(100% - (50px + 95px + 32px));
+					overflow-y: auto;
+					
 					li, a {
 						display: block;
 					}
