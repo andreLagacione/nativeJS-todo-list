@@ -16,6 +16,11 @@ body {
 		@include transition-ease(.3s);
 		@include transform3d(200px, 0, 0);
 	}
+
+	&.hide-menu {
+		@include transition-ease(.3s);
+		@include transform3d(0, 0, 0);
+	}
 }
 
 *, *:after, *:before {

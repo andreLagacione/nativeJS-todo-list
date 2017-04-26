@@ -30,11 +30,11 @@ $themes: (
 }
 
 @mixin transform3d($valueX, $valueY, $valueZ) {
-	-webkit-transition: translate3d($valueX $valueY $valueZ);
-	   -moz-transition: translate3d($valueX $valueY $valueZ);
-	    -ms-transition: translate3d($valueX $valueY $valueZ);
-		   -o-transition: translate3d($valueX $valueY $valueZ);
-					transition: translate3d($valueX $valueY $valueZ);
+	-webkit-transform: translate3d($valueX, $valueY, $valueZ);
+	   -moz-transform: translate3d($valueX, $valueY, $valueZ);
+	    -ms-transform: translate3d($valueX, $valueY, $valueZ);
+		   -o-transform: translate3d($valueX, $valueY, $valueZ);
+					transform: translate3d($valueX, $valueY, $valueZ);
 }
 
 
