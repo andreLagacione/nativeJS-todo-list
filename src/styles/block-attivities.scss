@@ -10,6 +10,10 @@ body {
 				border: 1px solid darken($default-theme, 5%);
 				margin: 0 0 15px;
 
+				&.double-width {
+					width: 49.5%;
+				}
+
 				.top-block {
 					background-color: darken($default-theme, 5%);
 					height: 40px;
