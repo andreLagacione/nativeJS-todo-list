@@ -168,8 +168,8 @@
 										<!--/theme-item-->
 
 										<div class="theme-item">
-											<div class="theme-box" style="background-color: #036300;" theme-name="green-theme" onClick="changeTheme(this)">
-												<div class="selected-indicator" style="background-color: #036300;"></div>
+											<div class="theme-box" style="background-color: #d90000;" theme-name="red-theme" onClick="changeTheme(this)">
+												<div class="selected-indicator" style="background-color: #d90000;"></div>
 											</div>
 											<!--/theme-box-->
 										</div>
@@ -223,24 +223,65 @@
 						<h2 class="block-name">My tasks</h2>
 					</header>
 
-					<div class="content-block tasks full-hidden">
-						<div class="row-task">
+					<div class="content-block active">
+						<div class="row-task full-hidden">
 							<header class="top-task full-hidden">
-								<span class="buttom-more left"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								<h3 class="title-task left">Title task</h3>
-								<div class="status"><span class="bullet"></span></div>
-								<div class="total-time">03:28:05</div>
-								<div class="estimated-time">10:00:00</div>
+								<div class="box-button">
+									<span class="buttom toggle-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
+								</div>
+								<h3 class="title task">Title task</h3>
+								<div class="status"><span class="bullet normal"></span></div>
+								<div class="time total relative show-tootip" tooltip-text="Estimated time">
+									03:28:05
+
+									<div class="tooltip-component">Estimated time</div>
+								</div>
+								<div class="time estimated">10:00:00</div>
 							</header>
 							<!--/top-task-->
 
-							<div class="content-task">
+							<div class="content-task full-hidden">
 								<div class="row-sub-task full-hidden">
-									<span class="buttom play-pause-task"><i class="fa fa-play" aria-hidden="true"></i></span>
-									<h4 class="sub-task-title">Subtask title</h4>
-									<div class="status"><span class="bullet"></span></div>
-									<div class="total-time">03:28:05</div>
-									<div class="estimated-time">10:00:00</div>
+									<div class="box-button">
+										<span class="buttom play-pause-task"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet warning"></span></div>
+									<div class="time total">03:28:05</div>
+									<div class="time estimated">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet danger"></span></div>
+									<div class="time total">03:28:05</div>
+									<div class="time estimated">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total">03:28:05</div>
+									<div class="time estimated">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total">03:28:05</div>
+									<div class="time estimated">10:00:00</div>
 								</div>
 								<!--/row-sub-task -->
 							</div>

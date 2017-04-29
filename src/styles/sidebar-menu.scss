@@ -1,7 +1,6 @@
 @import '_variables';
 
-body {
-	@each $key, $value in $themes {
+@each $key, $value in $themes {
 		&.#{$key} {
 			$default-theme: map-get($value, color);
 
@@ -115,7 +114,7 @@ body {
 				#main-menu {
 					height: calc(100% - (50px + 95px + 32px));
 					overflow-y: auto;
-					
+
 					li, a {
 						display: block;
 					}
@@ -205,5 +204,3 @@ body {
 		} //@each - theme
 
 	} //@each
-
-} //body.default-theme

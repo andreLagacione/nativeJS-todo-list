@@ -1,7 +1,6 @@
 @import '_variables';
 
-body {
-  @each $key, $value in $themes {
+@each $key, $value in $themes {
 		&.#{$key} {
 			$default-theme: map-get($value, color);
 
@@ -176,5 +175,3 @@ body {
     } //@each - theme
 
   } //@each
-
-} //body

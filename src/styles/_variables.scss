@@ -3,6 +3,10 @@ $white: #fff;
 $black: #000;
 $red: #f00;
 $gray: #555;
+$normal: #009dd1;
+$warning: #f0971a;
+$danger: #d90000;
+$finish: #059900;
 
 // SIZES
 $default-size: 10px;
@@ -12,7 +16,7 @@ $themes: (
 		default-theme: (color: #3c8dbc),
 		orange-theme: (color: #ff8000),
 		purple-theme: (color: #ff00ee),
-		green-theme: (color: #036300)
+		red-theme: (color: #d90000)
 );
 
 // MIXINS

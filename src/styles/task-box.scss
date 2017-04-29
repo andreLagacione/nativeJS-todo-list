@@ -1,15 +1,135 @@
 @import '_reset';
 @import '_variables';
 
-body {
-	@each $key, $value in $themes {
+@each $key, $value in $themes {
 		&.#{$key} {
 			$default-theme: map-get($value, color);
 
-			
+			.content-block {
+				.row-task {
+					.top-task,
+					.row-sub-task {
+						border-bottom: 1px solid darken($default-theme, 10%);
+						height: 40px;
+						padding: 0 10px;
+
+						&:hover {
+							background-color: lighten($default-theme, 40%);
+						}
+
+						> * {
+							float: left;
+						}
+
+					} //.top-task
+
+					.box-button {
+						width: 10%;
+
+						.buttom {
+							border: 1px solid darken($default-theme, 10%);
+							background-color: darken($default-theme, 5%);
+							padding: 5px 0;
+							width: 25px;
+							text-align: center;
+							display: inline-block;
+							border-radius: 5px;
+							color: $white;
+							margin: 6px 0 0;
+							cursor: pointer;
+
+							&:hover {
+								background-color: darken($default-theme, 10%);
+							}
+
+							.fa {
+								font-size: 12px;
+							}
+						}
+
+					} //.box-button
+
+					.title {
+						@include ellipsis;
+						font-size: 14px;
+						color: $gray;
+						width: 55%;
+						line-height: 40px;
+
+						&.task {
+							font-weight: bold;
+						}
+					}
+
+					.status {
+						width: 5%;
+						height: 100%;
+						text-align: center;
+
+						.bullet {
+							width: 10px;
+							height: 10px;
+							display: inline-block;
+							border-radius: 50%;
+							margin: 15px 0 0;
+
+							&.normal {
+								background-color: $normal;
+							}
+
+							&.warning {
+								background-color: $warning;
+							}
+
+							&.danger {
+								background-color: $danger;
+							}
+
+							&.finish {
+								background-color: $finish;
+							}
+
+						} //.bullet
+
+					} //.status
+
+					.time {
+						width: 15%;
+						text-align: center;
+						font-size: 14px;
+						color: $gray;
+						line-height: 40px;
+					}
+
+					.content-task {
+						background-color: lighten($default-theme, 35%);
+						height: 0;
+						overflow-y: auto;
+
+						.row-sub-task {
+							border: 0;
+
+							&:hover {
+								background-color: lighten($default-theme, 30%);
+							}
+						}
+
+					} //content-task
+
+				} //.row-task
+
+				&.active {
+					.top-task {
+						background-color: lighten($default-theme, 40%);
+					}
+
+					.content-task {
+						height: 160px;
+					}
+				}
+
+			} //.content-block
 
 		} //@each - theme
 
 	} //@each
-
-} //body.default-theme
