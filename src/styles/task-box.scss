@@ -115,17 +115,17 @@
 
 					} //content-task
 
+					&.active {
+						.top-task {
+							background-color: lighten($default-theme, 40%);
+						}
+
+						.content-task {
+							height: 160px;
+						}
+					}
+
 				} //.row-task
-
-				&.active {
-					.top-task {
-						background-color: lighten($default-theme, 40%);
-					}
-
-					.content-task {
-						height: 160px;
-					}
-				}
 
 			} //.content-block
 
