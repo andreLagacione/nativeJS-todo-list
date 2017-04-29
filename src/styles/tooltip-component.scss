@@ -1,0 +1,36 @@
+@import '_variables';
+
+@each $key, $value in $themes {
+		&.#{$key} {
+			$default-theme: map-get($value, color);
+
+			.tooltip-component {
+				background-color: lighten($default-theme, 40%);
+				border: 1px solid $default-theme;
+				padding: 10px 15px;
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 80;
+				border-radius: 5px;
+				font-size: 13px;
+				color: $gray;
+				display: none;
+
+				&::after {
+					content: '';
+					width: 10px;
+					height: 10px;
+					border-color: $default-theme transparent transparent transparent;
+					border-style: solid;
+					border-width: 8px;
+					position: absolute;
+					left: 44%;
+					bottom: -17px;
+				}
+
+			} //.tooltip-component
+
+		} //@each - theme
+
+	} //@each
