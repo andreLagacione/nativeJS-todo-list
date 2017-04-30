@@ -17,9 +17,13 @@ window.onload = function loadWindow() {
 	});
 };
 
+function checkHasClass(element) {
+	return element.className.split(' ');
+}
+
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
-		hasClass = item.className.split(' '),
+		hasClass = checkHasClass(item),
 		allIconIndicator = document.querySelectorAll('.icon-sub-category i'),
 		iconIndicatorItem = item.querySelectorAll('.icon-sub-category i'),
 		itemSubcategoryList = item.querySelectorAll('.sub-category'),
@@ -109,7 +113,7 @@ function changeTheme(theme) {
 
 function toggleMenu() {
 	var bodyTag = document.getElementsByTagName('body'),
-			hasClass = bodyTag[0].className.split(' ');
+			hasClass = checkHasClass(bodyTag[0]);
 
 	document.getElementById('glass').style.display = 'block';
 
@@ -123,4 +127,41 @@ function toggleMenu() {
 		}
 	}
 
+}
+
+function toggleDetailsTask(toggleButtom) {
+	var rowTaskClicked = toggleButtom.parentElement.parentElement.parentElement,
+			iconButtom = toggleButtom.childNodes[0],
+			contentTaskClicked = rowTaskClicked.querySelectorAll('.content-task'),
+			allRowTasks = document.querySelectorAll('.row-task'),
+			allContentTasks = document.querySelectorAll('.content-task'),
+			allButtomIcon = document.querySelectorAll('.toggle-details i'),
+			hasActive = checkHasClass(rowTaskClicked);
+
+	for (var i = 0; i < allButtomIcon.length; i++) {
+		allButtomIcon[i].classList.remove('fa-minus');
+		allButtomIcon[i].classList.add('fa-plus');
+	}
+
+	for (var i = 0; i < allRowTasks.length; i++) {
+		allRowTasks[i].classList.remove('active');
+	}
+
+	for (var i = 0; i < allContentTasks.length; i++) {
+		allContentTasks[i].style.height = 0;
+	}
+
+	for (var i = 0; i < hasActive.length; i++) {
+		if (hasActive[i] == 'active') {
+			rowTaskClicked.classList.remove('active');
+			contentTaskClicked[0].style.height = 0;
+			iconButtom.classList.remove('fa-minus');
+			iconButtom.classList.add('fa-plus');
+		} else {
+			rowTaskClicked.classList.add('active');
+			contentTaskClicked[0].style.height = '160px';
+			iconButtom.classList.add('fa-minus');
+			iconButtom.classList.remove('fa-plus');
+		}
+	}
 }

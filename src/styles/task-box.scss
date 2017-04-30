@@ -6,6 +6,10 @@
 
 			.content-block {
 				.row-task {
+					* {
+						@include transition-ease(.3s);
+					}
+					
 					.top-task,
 					.row-sub-task {
 						border-bottom: 1px solid darken($default-theme, 10%);
@@ -118,10 +122,6 @@
 					&.active {
 						.top-task {
 							background-color: lighten($default-theme, 40%);
-						}
-
-						.content-task {
-							height: 160px;
 						}
 					}
 
