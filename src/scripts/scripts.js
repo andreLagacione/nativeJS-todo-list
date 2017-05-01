@@ -192,6 +192,8 @@ function hiddenTooltip() {
 var controlInterval = null;
 
 function toggleTimeTask(buttomControl) {
+	clearInterval(controlInterval);
+	
 	var rowSubTask = buttomControl.parentElement.parentElement,
 			statusSubTask = rowSubTask.querySelector('.bullet'),
 			elementTimeInTask = rowSubTask.querySelector('.time.total'),
@@ -219,8 +221,6 @@ function toggleTimeTask(buttomControl) {
 		allButtonsToggleTask[i].classList.remove('fa-pause');
 		allButtonsToggleTask[i].classList.add('fa-play');
 	}
-
-	clearInterval(controlInterval);
 
 	for (var i = 0; i < hasActive.length; i++) {
 		var hasInterval = false;
