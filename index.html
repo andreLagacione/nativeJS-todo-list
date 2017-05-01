@@ -127,58 +127,61 @@
 					<div class="menu-configuration relative right">
 						<button type="button" class="control-configuration" onClick="showMenuDetails()"><i class="fa fa-cogs" aria-hidden="true"></i></button>
 
-						<div class="content-configuration hiding" onMouseLeave="hiddenMenuDetails()">
-							<nav class="item my-details">
-								<ul>
-									<li><a href="#" title="Perfil">Perfil</a></li>
-									<li><a href="#" title="Configurations">Configurations</a></li>
-									<li><a href="#" title="My tasks">My tasks</a></li>
-									<li><a href="#" title="My stats">My stats</a></li>
-								</ul>
-							</nav>
-							<!--/item.my-details-->
+						<div class="show-menu hiding" onMouseLeave="hiddenMenuDetails()">
+							<div class="content-configuration relative">
+								<nav class="item my-details">
+									<ul>
+										<li><a href="#" title="Perfil">Perfil</a></li>
+										<li><a href="#" title="Configurations">Configurations</a></li>
+										<li><a href="#" title="My tasks">My tasks</a></li>
+										<li><a href="#" title="My stats">My stats</a></li>
+									</ul>
+								</nav>
+								<!--/item.my-details-->
 
-							<div class="item themes">
-								<div class="title">Themes</div>
+								<div class="item themes">
+									<div class="title">Themes</div>
 
-								<div class="my-themes full-hidden">
-									<div class="theme-item">
-										<div class="theme-box active" style="background-color: #3c8dbc;" theme-name="default-theme" onClick="changeTheme(this)">
-											<div class="selected-indicator" style="background-color: #3c8dbc;"></div>
+									<div class="my-themes full-hidden">
+										<div class="theme-item">
+											<div class="theme-box active" style="background-color: #3c8dbc;" theme-name="default-theme" onClick="changeTheme(this)">
+												<div class="selected-indicator" style="background-color: #3c8dbc;"></div>
+											</div>
+											<!--/theme-box-->
 										</div>
-										<!--/theme-box-->
-									</div>
-									<!--/theme-item-->
+										<!--/theme-item-->
 
-									<div class="theme-item">
-										<div class="theme-box" style="background-color: #ff8000;" theme-name="orange-theme" onClick="changeTheme(this)">
-											<div class="selected-indicator" style="background-color: #ff8000;"></div>
+										<div class="theme-item">
+											<div class="theme-box" style="background-color: #ff8000;" theme-name="orange-theme" onClick="changeTheme(this)">
+												<div class="selected-indicator" style="background-color: #ff8000;"></div>
+											</div>
+											<!--/theme-box-->
 										</div>
-										<!--/theme-box-->
-									</div>
-									<!--/theme-item-->
+										<!--/theme-item-->
 
-									<div class="theme-item">
-										<div class="theme-box" style="background-color: #ff00ee;" theme-name="purple-theme" onClick="changeTheme(this)">
-											<div class="selected-indicator" style="background-color: #ff00ee;"></div>
+										<div class="theme-item">
+											<div class="theme-box" style="background-color: #ff00ee;" theme-name="purple-theme" onClick="changeTheme(this)">
+												<div class="selected-indicator" style="background-color: #ff00ee;"></div>
+											</div>
+											<!--/theme-box-->
 										</div>
-										<!--/theme-box-->
-									</div>
-									<!--/theme-item-->
+										<!--/theme-item-->
 
-									<div class="theme-item">
-										<div class="theme-box" style="background-color: #036300;" theme-name="green-theme" onClick="changeTheme(this)">
-											<div class="selected-indicator" style="background-color: #036300;"></div>
+										<div class="theme-item">
+											<div class="theme-box" style="background-color: #d90000;" theme-name="red-theme" onClick="changeTheme(this)">
+												<div class="selected-indicator" style="background-color: #d90000;"></div>
+											</div>
+											<!--/theme-box-->
 										</div>
-										<!--/theme-box-->
+										<!--/theme-item-->
 									</div>
-									<!--/theme-item-->
+									<!--/my-themes-->
 								</div>
-								<!--/my-themes-->
+								<!--/item.themes-->
 							</div>
-							<!--/item.themes-->
+							<!--/content-configuration-->
 						</div>
-						<!--/content-configuration-->
+						<!--/show-menu-->
 					</div>
 					<!--/menu-configuration-->
 				</div>
@@ -215,334 +218,316 @@
 				</div>
 				<!--/block-attivities-->
 
-				<div class="block-attivities">
+				<div class="block-attivities double-width left">
 					<header class="top-block">
 						<h2 class="block-name">My tasks</h2>
 					</header>
 
-					<div class="content-block tasks full-hidden">
-						<div class="row-tasks full-hidden">
-							<h3 class="title-subject-task">Last regitered tasks</h3>
-
-							<div class="task-box left">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
-									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+					<div class="content-block">
+						<div class="row-task full-hidden">
+							<header class="top-task full-hidden">
+								<div class="box-button">
+									<span class="buttom toggle-details" onClick="toggleDetailsTask(this)"><i class="fa fa-plus" aria-hidden="true"></i></span>
 								</div>
-								<!--/content-task-->
-							</div>
-							<!--/task-box-->
+								<h3 class="title task">Title task</h3>
+								<div class="status"><span class="bullet normal"></span></div>
+								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">03:58:50</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+							</header>
+							<!--/top-task-->
 
-							<div class="task-box right">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
+							<div class="content-task full-hidden">
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
 									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet warning"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">08:58:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
 								</div>
-								<!--/content-task-->
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet danger"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">12:33:15</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">03:28:05</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">04:48:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
 							</div>
-							<!--/task-box-->
+							<!--/content-task-->
 						</div>
-						<!--/row-tasks-->
+						<!--/row-task-->
 
-						<div class="row-tasks full-hidden">
-							<div class="task-box left">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
-									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+						<div class="row-task full-hidden">
+							<header class="top-task full-hidden">
+								<div class="box-button">
+									<span class="buttom toggle-details" onClick="toggleDetailsTask(this)"><i class="fa fa-plus" aria-hidden="true"></i></span>
 								</div>
-								<!--/content-task-->
-							</div>
-							<!--/task-box-->
+								<h3 class="title task">Title task</h3>
+								<div class="status"><span class="bullet normal"></span></div>
+								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">03:58:50</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+							</header>
+							<!--/top-task-->
 
-							<div class="task-box right">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
+							<div class="content-task full-hidden">
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
 									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet warning"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">08:58:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
 								</div>
-								<!--/content-task-->
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet danger"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">12:33:15</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">03:28:05</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">04:48:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
 							</div>
-							<!--/task-box-->
+							<!--/content-task-->
 						</div>
-						<!--/row-tasks-->
+						<!--/row-task-->
 
-						<div class="row-tasks full-hidden">
-							<h3 class="title-subject-task">Work tasks</h3>
-
-							<div class="task-box left">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
-									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+						<div class="row-task full-hidden">
+							<header class="top-task full-hidden">
+								<div class="box-button">
+									<span class="buttom toggle-details" onClick="toggleDetailsTask(this)"><i class="fa fa-plus" aria-hidden="true"></i></span>
 								</div>
-								<!--/content-task-->
-							</div>
-							<!--/task-box-->
+								<h3 class="title task">Title task</h3>
+								<div class="status"><span class="bullet normal"></span></div>
+								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">03:58:50</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+							</header>
+							<!--/top-task-->
 
-							<div class="task-box right">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
+							<div class="content-task full-hidden">
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
 									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet warning"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">08:58:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
 								</div>
-								<!--/content-task-->
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet danger"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">12:33:15</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">03:28:05</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">04:48:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
 							</div>
-							<!--/task-box-->
+							<!--/content-task-->
 						</div>
-						<!--/row-tasks-->
+						<!--/row-task-->
 
-						<div class="row-tasks full-hidden">
-							<h3 class="title-subject-task">House tasks</h3>
-
-							<div class="task-box left">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
-									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+						<div class="row-task full-hidden">
+							<header class="top-task full-hidden">
+								<div class="box-button">
+									<span class="buttom toggle-details" onClick="toggleDetailsTask(this)"><i class="fa fa-plus" aria-hidden="true"></i></span>
 								</div>
-								<!--/content-task-->
-							</div>
-							<!--/task-box-->
+								<h3 class="title task">Title task</h3>
+								<div class="status"><span class="bullet normal"></span></div>
+								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">03:58:50</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+							</header>
+							<!--/top-task-->
 
-							<div class="task-box right">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
+							<div class="content-task full-hidden">
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
 									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet warning"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">08:58:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
 								</div>
-								<!--/content-task-->
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet danger"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">12:33:15</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">03:28:05</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">04:48:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
 							</div>
-							<!--/task-box-->
+							<!--/content-task-->
 						</div>
-						<!--/row-tasks-->
+						<!--/row-task-->
 
-						<div class="row-tasks full-hidden">
-							<h3 class="title-subject-task">No categorized tasks</h3>
-
-							<div class="task-box left">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
-									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+						<div class="row-task full-hidden">
+							<header class="top-task full-hidden">
+								<div class="box-button">
+									<span class="buttom toggle-details" onClick="toggleDetailsTask(this)"><i class="fa fa-plus" aria-hidden="true"></i></span>
 								</div>
-								<!--/content-task-->
-							</div>
-							<!--/task-box-->
+								<h3 class="title task">Title task</h3>
+								<div class="status"><span class="bullet normal"></span></div>
+								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">03:58:50</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+							</header>
+							<!--/top-task-->
 
-							<div class="task-box right">
-								<header class="top-task full-hidden">
-									<h4 class="title-task">Title task</h4>
-									<span class="button-details"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</header>
-
-								<div class="content-task full-hidden">
-									<div class="box-info-task description left">
-										<strong class="title-description">Description</strong>
-
-										<div class="text-description">
-											<p>
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-											</p>
-										</div>
-										<!--/text-description-->
+							<div class="content-task full-hidden">
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
 									</div>
-									<!--/box-info-task-->
-
-									<div class="box-info-task time right">
-										<strong class="title-description">Time estimed</strong>
-										<div class="text-info-time"><b>Total:</b> 10:00:00</div>
-										<div class="text-info-time"><b>Spent:</b> 6:45:21</div>
-									</div>
-									<!--/box-info-task-->
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet warning"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">08:58:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
 								</div>
-								<!--/content-task-->
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet danger"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">12:33:15</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">03:28:05</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet finish"></span></div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">04:48:55</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								</div>
+								<!--/row-sub-task -->
 							</div>
-							<!--/task-box-->
+							<!--/content-task-->
 						</div>
-						<!--/row-tasks-->
+						<!--/row-task-->
 					</div>
 					<!--/content-block-->
 				</div>
@@ -551,6 +536,8 @@
 			<!--/content-->
 		</main>
 		<!--/content-application-->
+
+		<div id="tooltip-component">Estimated time</div>
 
 		<script src="gh-pages/scripts/main.min.js"></script>
 	</body>
