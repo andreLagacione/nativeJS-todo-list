@@ -181,12 +181,89 @@ function configureTooltip(anchorElement) {
 	tooltipComponent.style.top = positionTooltip.top + 'px';
 	tooltipComponent.style.zIndex = 80;
 	tooltipComponent.style.opacity = 1;
-
-	// anchorElement.addEventListener('mouseleave', hiddenTooltip(tooltipComponent));
 }
 
 function hiddenTooltip() {
 	tooltipComponent = document.getElementById('tooltip-component'),
 	tooltipComponent.style.zIndex = -50;
 	tooltipComponent.style.opacity = 0;
+}
+
+var controlInterval = null;
+
+function toggleTimeTask(buttomControl) {
+	var rowSubTask = buttomControl.parentElement.parentElement,
+			statusSubTask = rowSubTask.querySelector('.bullet'),
+			elementTimeInTask = rowSubTask.querySelector('.time.total'),
+			timeInTask = elementTimeInTask.innerHTML.split(':'),
+			timeEstimedForTask = rowSubTask.querySelector('.time.estimated').innerHTML.split(':'),
+			hasActive = checkHasClass(rowSubTask),
+			currentTime = {
+				hours: parseInt(timeInTask[0]),
+				minutes: parseInt(timeInTask[1]),
+				seconds: parseInt(timeInTask[2])
+			},
+			// estimedTime = {
+			// 	hours: parseInt(timeEstimedForTask[0]),
+			// 	minutes: parseInt(timeEstimedForTask[1]),
+			// 	seconds: parseInt(timeEstimedForTask[2])
+			// };
+			allSubTasks = document.querySelectorAll('.row-sub-task'),
+			allButtonsToggleTask = document.querySelectorAll('.play-pause-task .fa');
+
+	for (var i = 0; i < allSubTasks.length; i++) {
+		allSubTasks[i].classList.remove('active');
+	}
+
+	for (var i = 0; i < allButtonsToggleTask.length; i++) {
+		allButtonsToggleTask[i].classList.remove('fa-pause');
+		allButtonsToggleTask[i].classList.add('fa-play');
+	}
+
+	clearInterval(controlInterval);
+
+	for (var i = 0; i < hasActive.length; i++) {
+		var hasInterval = false;
+
+		if (hasActive[i] == 'active') {
+			rowSubTask.classList.remove('active');
+			buttomControl.childNodes[0].classList.add('fa-play');
+			buttomControl.childNodes[0].classList.remove('fa-pause');
+			clearInterval(controlInterval);
+			break;
+		} else {
+			rowSubTask.classList.add('active');
+			buttomControl.childNodes[0].classList.remove('fa-play');
+			buttomControl.childNodes[0].classList.add('fa-pause');
+			hasInterval = true;
+		}
+	}
+
+	if (hasInterval) {
+		countTimeInTask(currentTime, elementTimeInTask);
+	}
+}
+
+function countTimeInTask(currentTime, elementTimeInTask) {
+	var printTime = {};
+
+	controlInterval = setInterval(function() {
+		currentTime.seconds++;
+
+		if (currentTime.seconds > 59) {
+			currentTime.minutes++;
+			currentTime.seconds = 0
+		}
+
+		if (currentTime.minutes > 59) {
+			currentTime.hours++;
+			currentTime.minutes = 0;
+		}
+
+		currentTime.seconds < 10 ? printTime.seconds = '0' + currentTime.seconds : printTime.seconds = currentTime.seconds;
+		currentTime.minutes < 10 ? printTime.minutes = '0' + currentTime.minutes : printTime.minutes = currentTime.minutes
+		currentTime.hours < 10 ? printTime.hours = '0' + currentTime.hours : printTime.hours = currentTime.hours;
+
+		elementTimeInTask.innerHTML = printTime.hours + ':' + printTime.minutes + ':' + printTime.seconds;
+	}, 1000);
 }

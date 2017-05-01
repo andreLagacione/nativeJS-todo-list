@@ -9,7 +9,7 @@
 					* {
 						@include transition-ease(.3s);
 					}
-					
+
 					.top-task,
 					.row-sub-task {
 						border-bottom: 1px solid darken($default-theme, 10%);
@@ -112,7 +112,8 @@
 						.row-sub-task {
 							border: 0;
 
-							&:hover {
+							&:hover,
+							&.active {
 								background-color: lighten($default-theme, 30%);
 							}
 						}
