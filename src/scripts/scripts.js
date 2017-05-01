@@ -1,3 +1,11 @@
+// TODO - criar função para somar as horas gastas nas sub-tarefas e adicionar o total ao cabeçalho da mesma
+// TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
+// TODO - Criar alguma coisa para finalizar a tarefa e não deixar a mesma contat tempo
+
+
+// GLOBAL VARIABLES
+var controlInterval = null;
+
 window.onload = function loadWindow() {
 	var now = new Date();
 	getDateDate(now);
@@ -189,11 +197,9 @@ function hiddenTooltip() {
 	tooltipComponent.style.opacity = 0;
 }
 
-var controlInterval = null;
-
 function toggleTimeTask(buttomControl) {
 	clearInterval(controlInterval);
-	
+
 	var rowSubTask = buttomControl.parentElement.parentElement,
 			statusSubTask = rowSubTask.querySelector('.bullet'),
 			elementTimeInTask = rowSubTask.querySelector('.time.total'),
