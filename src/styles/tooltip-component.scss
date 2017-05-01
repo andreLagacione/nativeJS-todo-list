@@ -4,18 +4,16 @@
 		&.#{$key} {
 			$default-theme: map-get($value, color);
 
-			.tooltip-component {
+			#tooltip-component {
 				background-color: lighten($default-theme, 40%);
 				border: 1px solid $default-theme;
 				padding: 10px 15px;
 				position: fixed;
-				left: 0;
-				top: 0;
-				z-index: 80;
 				border-radius: 5px;
 				font-size: 13px;
 				color: $gray;
-				display: none;
+				z-index: -50;
+				opacity: 0;
 
 				&::after {
 					content: '';
@@ -29,7 +27,7 @@
 					bottom: -17px;
 				}
 
-			} //.tooltip-component
+			} //#tooltip-component
 
 		} //@each - theme
 

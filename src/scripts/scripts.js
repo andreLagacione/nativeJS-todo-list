@@ -165,3 +165,28 @@ function toggleDetailsTask(toggleButtom) {
 		}
 	}
 }
+
+function configureTooltip(anchorElement) {
+	var tooltipText = anchorElement.getAttribute('tooltip-text'),
+			tooltipComponent = document.getElementById('tooltip-component'),
+			tooltipWidth = tooltipComponent.offsetWidth,
+			rect = anchorElement.getBoundingClientRect(),
+			positionTooltip = {
+				left: rect.left,
+				top: rect.top - rect.height
+			};
+
+	tooltipComponent.innerHTML = tooltipText;
+	tooltipComponent.style.left = positionTooltip.left + 'px';
+	tooltipComponent.style.top = positionTooltip.top + 'px';
+	tooltipComponent.style.zIndex = 80;
+	tooltipComponent.style.opacity = 1;
+
+	// anchorElement.addEventListener('mouseleave', hiddenTooltip(tooltipComponent));
+}
+
+function hiddenTooltip() {
+	tooltipComponent = document.getElementById('tooltip-component'),
+	tooltipComponent.style.zIndex = -50;
+	tooltipComponent.style.opacity = 0;
+}
