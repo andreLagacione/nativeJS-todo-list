@@ -4,7 +4,8 @@
 
 
 // GLOBAL VARIABLES
-var controlInterval = null;
+var controlInterval = null,
+		controlIntervalCategoryTask = null;
 
 window.onload = function loadWindow() {
 	var now = new Date();
@@ -199,8 +200,10 @@ function hiddenTooltip() {
 
 function toggleTimeTask(buttomControl) {
 	clearInterval(controlInterval);
+	clearInterval(controlIntervalCategoryTask);
 
 	var rowSubTask = buttomControl.parentElement.parentElement,
+			categoryTask = rowSubTask.parentElement.previousElementSibling,
 			statusSubTask = rowSubTask.querySelector('.bullet'),
 			elementTimeInTask = rowSubTask.querySelector('.time.total'),
 			timeInTask = elementTimeInTask.innerHTML.split(':'),
@@ -247,6 +250,7 @@ function toggleTimeTask(buttomControl) {
 
 	if (hasInterval) {
 		countTimeInTask(currentTime, elementTimeInTask);
+		countTimeCategoryTask(categoryTask);
 	}
 }
 
@@ -271,5 +275,36 @@ function countTimeInTask(currentTime, elementTimeInTask) {
 		currentTime.hours < 10 ? printTime.hours = '0' + currentTime.hours : printTime.hours = currentTime.hours;
 
 		elementTimeInTask.innerHTML = printTime.hours + ':' + printTime.minutes + ':' + printTime.seconds;
+	}, 1000);
+}
+
+function countTimeCategoryTask(categoryTask) {
+	var controlTimeInTask = categoryTask.querySelector('.time.total'),
+			timeInTask = controlTimeInTask.innerHTML.split(':'),
+			currentTime = {
+				hours: parseInt(timeInTask[0]),
+				minutes: parseInt(timeInTask[1]),
+				seconds: parseInt(timeInTask[2])
+			},
+			printTime = {};
+
+	controlIntervalCategoryTask = setInterval(function() {
+		currentTime.seconds++;
+
+		if (currentTime.seconds > 59) {
+			currentTime.minutes++;
+			currentTime.seconds = 0
+		}
+
+		if (currentTime.minutes > 59) {
+			currentTime.hours++;
+			currentTime.minutes = 0;
+		}
+
+		currentTime.seconds < 10 ? printTime.seconds = '0' + currentTime.seconds : printTime.seconds = currentTime.seconds;
+		currentTime.minutes < 10 ? printTime.minutes = '0' + currentTime.minutes : printTime.minutes = currentTime.minutes
+		currentTime.hours < 10 ? printTime.hours = '0' + currentTime.hours : printTime.hours = currentTime.hours;
+
+		controlTimeInTask.innerHTML = printTime.hours + ':' + printTime.minutes + ':' + printTime.seconds;
 	}, 1000);
 }
