@@ -4,8 +4,10 @@
 
 
 // GLOBAL VARIABLES
-var controlInterval = null,
-		controlIntervalCategoryTask = null;
+var intervals = {
+	category: null,
+	task: null
+};
 
 window.onload = function loadWindow() {
 	var now = new Date();
@@ -199,8 +201,8 @@ function hiddenTooltip() {
 }
 
 function toggleTimeTask(buttomControl) {
-	clearInterval(controlInterval);
-	clearInterval(controlIntervalCategoryTask);
+	clearInterval(intervals.task);
+	clearInterval(intervals.category);
 
 	var rowSubTask = buttomControl.parentElement.parentElement,
 			categoryTask = rowSubTask.parentElement.previousElementSibling,
@@ -213,6 +215,13 @@ function toggleTimeTask(buttomControl) {
 				hours: parseInt(timeInTask[0]),
 				minutes: parseInt(timeInTask[1]),
 				seconds: parseInt(timeInTask[2])
+			},
+			controlTimeInTask = categoryTask.querySelector('.time.total'),
+			totalTimeInTask = controlTimeInTask.innerHTML.split(':'),
+			totalCurrentTime = {
+				hours: parseInt(totalTimeInTask[0]),
+				minutes: parseInt(totalTimeInTask[1]),
+				seconds: parseInt(totalTimeInTask[2])
 			},
 			// estimedTime = {
 			// 	hours: parseInt(timeEstimedForTask[0]),
@@ -238,7 +247,8 @@ function toggleTimeTask(buttomControl) {
 			rowSubTask.classList.remove('active');
 			buttomControl.childNodes[0].classList.add('fa-play');
 			buttomControl.childNodes[0].classList.remove('fa-pause');
-			clearInterval(controlInterval);
+			clearInterval(intervals.task);
+			clearInterval(intervals.category);
 			break;
 		} else {
 			rowSubTask.classList.add('active');
@@ -249,15 +259,14 @@ function toggleTimeTask(buttomControl) {
 	}
 
 	if (hasInterval) {
-		countTimeInTask(currentTime, elementTimeInTask);
-		countTimeCategoryTask(categoryTask);
+		countTimeInTask(currentTime, elementTimeInTask, 'intervalTask');
+		countTimeInTask(totalCurrentTime, controlTimeInTask, 'intervalCategory');
 	}
 }
 
-function countTimeInTask(currentTime, elementTimeInTask) {
-	var printTime = {};
-
-	controlInterval = setInterval(function() {
+function countTimeInTask(currentTime, elementTimeInTask, requestInterval) {
+	var printTime = {},
+			controlInterval = setInterval(function() {
 		currentTime.seconds++;
 
 		if (currentTime.seconds > 59) {
@@ -276,35 +285,12 @@ function countTimeInTask(currentTime, elementTimeInTask) {
 
 		elementTimeInTask.innerHTML = printTime.hours + ':' + printTime.minutes + ':' + printTime.seconds;
 	}, 1000);
-}
 
-function countTimeCategoryTask(categoryTask) {
-	var controlTimeInTask = categoryTask.querySelector('.time.total'),
-			timeInTask = controlTimeInTask.innerHTML.split(':'),
-			currentTime = {
-				hours: parseInt(timeInTask[0]),
-				minutes: parseInt(timeInTask[1]),
-				seconds: parseInt(timeInTask[2])
-			},
-			printTime = {};
-
-	controlIntervalCategoryTask = setInterval(function() {
-		currentTime.seconds++;
-
-		if (currentTime.seconds > 59) {
-			currentTime.minutes++;
-			currentTime.seconds = 0
-		}
-
-		if (currentTime.minutes > 59) {
-			currentTime.hours++;
-			currentTime.minutes = 0;
-		}
-
-		currentTime.seconds < 10 ? printTime.seconds = '0' + currentTime.seconds : printTime.seconds = currentTime.seconds;
-		currentTime.minutes < 10 ? printTime.minutes = '0' + currentTime.minutes : printTime.minutes = currentTime.minutes
-		currentTime.hours < 10 ? printTime.hours = '0' + currentTime.hours : printTime.hours = currentTime.hours;
-
-		controlTimeInTask.innerHTML = printTime.hours + ':' + printTime.minutes + ':' + printTime.seconds;
-	}, 1000);
+	if (requestInterval == 'intervalTask') {
+		intervals.task = controlInterval;
+	} else if (requestInterval == 'intervalCategory') {
+		intervals.category = controlInterval
+	} else {
+		clearInterval(controlInterval);
+	}
 }
