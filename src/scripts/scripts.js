@@ -1,6 +1,5 @@
-// TODO - criar função para somar as horas gastas nas sub-tarefas e adicionar o total ao cabeçalho da mesma
 // TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
-// TODO - Criar alguma coisa para finalizar a tarefa e não deixar a mesma contat tempo
+// TODO - Criar alguma coisa para finalizar a tarefa e não deixar a mesma contar tempo
 
 
 // GLOBAL VARIABLES
@@ -32,6 +31,17 @@ function checkHasClass(element) {
 	return element.className.split(' ');
 }
 
+function removeActiveClass(element, classForRemove, classForAdd) {
+	for (var i = 0; i < element.length; i++) {
+		if (classForRemove && classForAdd) {
+			element[i].classList.remove(classForRemove);
+			element[i].classList.add(classForAdd);
+		} else {
+			element[i].classList.remove('active');
+		}
+	}
+}
+
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
 		hasClass = checkHasClass(item),
@@ -46,14 +56,8 @@ function actionsSidebarMenu(item) {
 		allSubcategariesList[i].style.height = 0;
 	}
 
-	for (var i = 0; i < categories.length; i++) {
-		categories[i].classList.remove('active');
-	}
-
-	for (var i = 0; i < allIconIndicator.length; i++) {
-		allIconIndicator[i].classList.remove('fa-chevron-down');
-		allIconIndicator[i].classList.add('fa-chevron-right');
-	}
+	removeActiveClass(categories);
+	removeActiveClass(allIconIndicator, 'fa-chevron-down', 'fa-chevron-right');
 
 	for (var i = 0; i < hasClass.length; i++) {
 		if (hasClass[i] == 'active') {
@@ -112,14 +116,11 @@ function changeTheme(theme) {
 			bodyTag = document.getElementsByTagName('body'),
 			atualTheme = bodyTag[0].getAttribute('theme-atual');
 
-		for (var i = 0; i < outherThemes.length; i++) {
-			outherThemes[i].classList.remove('active');
-		}
-
-		selectedTheme.classList.add('active');
-		bodyTag[0].setAttribute('theme-atual', definedTheme);
-		bodyTag[0].classList.remove(atualTheme);
-		bodyTag[0].classList.add(definedTheme);
+	removeActiveClass(outherThemes);
+	selectedTheme.classList.add('active');
+	bodyTag[0].setAttribute('theme-atual', definedTheme);
+	bodyTag[0].classList.remove(atualTheme);
+	bodyTag[0].classList.add(definedTheme);
 }
 
 function toggleMenu() {
@@ -149,14 +150,9 @@ function toggleDetailsTask(toggleButtom) {
 			allButtomIcon = document.querySelectorAll('.toggle-details i'),
 			hasActive = checkHasClass(rowTaskClicked);
 
-	for (var i = 0; i < allButtomIcon.length; i++) {
-		allButtomIcon[i].classList.remove('fa-minus');
-		allButtomIcon[i].classList.add('fa-plus');
-	}
-
-	for (var i = 0; i < allRowTasks.length; i++) {
-		allRowTasks[i].classList.remove('active');
-	}
+	removeActiveClass(allButtomIcon, 'fa-minus', 'fa-plus');
+	removeActiveClass(allRowTasks);
+	removeActiveClass(allRowTasks);
 
 	for (var i = 0; i < allContentTasks.length; i++) {
 		allContentTasks[i].style.height = 0;
@@ -231,14 +227,8 @@ function toggleTimeTask(buttomControl) {
 			allSubTasks = document.querySelectorAll('.row-sub-task'),
 			allButtonsToggleTask = document.querySelectorAll('.play-pause-task .fa');
 
-	for (var i = 0; i < allSubTasks.length; i++) {
-		allSubTasks[i].classList.remove('active');
-	}
-
-	for (var i = 0; i < allButtonsToggleTask.length; i++) {
-		allButtonsToggleTask[i].classList.remove('fa-pause');
-		allButtonsToggleTask[i].classList.add('fa-play');
-	}
+	removeActiveClass(allSubTasks);
+	removeActiveClass(allButtonsToggleTask, 'fa-pause', 'fa-play');
 
 	for (var i = 0; i < hasActive.length; i++) {
 		var hasInterval = false;
