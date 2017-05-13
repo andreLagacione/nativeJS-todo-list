@@ -82,7 +82,7 @@ gulp.task('dist', function (callback) {
 
 gulp.task('default', function (callback) {
   runSequence(
-      ['serve', 'watch'],
+      ['dist', 'serve', 'watch'],
       callback
     )
 });
