@@ -319,13 +319,16 @@ function toggleFinish(element) {
 			elementsForToggleClass = buttomControl;
 		} else if (typeTaskControl == 'category') {
 			var contentTask = rowTask.nextElementSibling;
-			elementsForToggleClass = contentTask.querySelectorAll('.play-pause-task i');
+			elementsForToggleClass = contentTask.querySelectorAll('.play-pause-task i'),
+			checkAllSubtasks = contentTask.querySelectorAll('.check-task .check');
 		}
 
 		if (typeReq == 'remove') {
 			removeActiveClass(elementsForToggleClass, 'fa-stop', 'fa-play');
+			removeActiveClass(checkAllSubtasks, 'checked', 'class');
 		} else {
 			removeActiveClass(elementsForToggleClass, 'fa-play', 'fa-stop');
+			removeActiveClass(checkAllSubtasks, 'class', 'checked');
 		}
 	}
 }

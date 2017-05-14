@@ -130,7 +130,7 @@
 								font-weight: bold;
 							}
 
-								&.active {
+								&.checked {
 								&:after {
 									@include scale(1);
 								}
