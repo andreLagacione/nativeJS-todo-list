@@ -287,6 +287,9 @@ function countTimeInTask(currentTime, elementTimeInTask, requestInterval) {
 
 
 function toggleFinish(element) {
+	clearInterval(intervals.task);
+	clearInterval(intervals.category);
+	
 	var checkbox = element.parentElement,
 			hasChecked = checkHasClass(element),
 			rowTask = checkbox.parentElement,
