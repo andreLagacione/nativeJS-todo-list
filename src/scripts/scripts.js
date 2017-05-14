@@ -31,13 +31,13 @@ function checkHasClass(element) {
 	return element.className.split(' ');
 }
 
-function removeActiveClass(element, classForRemove, classForAdd) {
+function removeActiveClass(element, classForRemove, classForAdd, classControl) {
 	for (var i = 0; i < element.length; i++) {
 		if (classForRemove && classForAdd) {
 			element[i].classList.remove(classForRemove);
 			element[i].classList.add(classForAdd);
 		} else {
-			element[i].classList.remove('active');
+			element[i].classList.remove(classControl);
 		}
 	}
 }
@@ -56,7 +56,7 @@ function actionsSidebarMenu(item) {
 		allSubcategariesList[i].style.height = 0;
 	}
 
-	removeActiveClass(categories);
+	removeActiveClass(categories, 'active');
 	removeActiveClass(allIconIndicator, 'fa-chevron-down', 'fa-chevron-right');
 
 	for (var i = 0; i < hasClass.length; i++) {
@@ -116,7 +116,7 @@ function changeTheme(theme) {
 			bodyTag = document.getElementsByTagName('body'),
 			atualTheme = bodyTag[0].getAttribute('theme-atual');
 
-	removeActiveClass(outherThemes);
+	removeActiveClass(outherThemes, 'active');
 	selectedTheme.classList.add('active');
 	bodyTag[0].setAttribute('theme-atual', definedTheme);
 	bodyTag[0].classList.remove(atualTheme);
@@ -152,7 +152,7 @@ function toggleDetailsTask(toggleButtom) {
 			hasActive = checkHasClass(rowTaskClicked);
 
 	removeActiveClass(allButtomIcon, 'fa-minus', 'fa-plus');
-	removeActiveClass(allRowTasks);
+	removeActiveClass(allRowTasks, 'active');
 
 	for (var i = 0; i < allContentTasks.length; i++) {
 		allContentTasks[i].style.height = 0;
@@ -227,7 +227,7 @@ function toggleTimeTask(buttomControl) {
 			allSubTasks = document.querySelectorAll('.row-sub-task'),
 			allButtonsToggleTask = document.querySelectorAll('.play-pause-task .fa');
 
-	removeActiveClass(allSubTasks);
+	removeActiveClass(allSubTasks, 'active');
 	removeActiveClass(allButtonsToggleTask, 'fa-pause', 'fa-play');
 
 	for (var i = 0; i < hasActive.length; i++) {
@@ -303,11 +303,11 @@ function toggleFinish(element) {
 	}
 
 	for (var i = 0; i < hasChecked.length; i++) {
-		if (hasChecked[i] == 'active') {
-			element.classList.remove('active');
+		if (hasChecked[i] == 'checked') {
+			element.classList.remove('checked');
 			checkTypeTask('remove');
 		} else {
-			element.classList.add('active');
+			element.classList.add('checked');
 			checkTypeTask('add');
 		}
 	}
