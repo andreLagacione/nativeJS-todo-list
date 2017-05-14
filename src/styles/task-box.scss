@@ -27,7 +27,7 @@
 					} //.top-task
 
 					.box-button {
-						width: 10%;
+						width: 5%;
 
 						.buttom {
 							border: 1px solid darken($default-theme, 10%);
@@ -56,7 +56,7 @@
 						@include ellipsis;
 						font-size: 14px;
 						color: $gray;
-						width: 50%;
+						width: 55%;
 						line-height: 40px;
 
 						&.task {
@@ -97,7 +97,7 @@
 					} //.status
 
 					.time {
-						width: 15%;
+						width: 10%;
 						text-align: center;
 						font-size: 14px;
 						color: $gray;

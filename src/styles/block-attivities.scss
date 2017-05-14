@@ -37,6 +37,11 @@
 						padding-bottom: 0;
 					}
 
+					&.scrool {
+						height: 250px;
+						overflow-y: auto;
+					}
+
 					.chart-box {
 						padding: 0 15px;
 						float: left;
