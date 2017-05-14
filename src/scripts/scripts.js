@@ -291,6 +291,7 @@ function toggleFinish(element) {
 			hasChecked = checkHasClass(element),
 			rowTask = checkbox.parentElement,
 			typeTask = checkHasClass(rowTask),
+			bulletInTask = rowTask.querySelector('.bullet'),
 			buttomControl = rowTask.querySelectorAll('.play-pause-task i'),
 			typeTaskControl = null;
 
@@ -305,30 +306,40 @@ function toggleFinish(element) {
 	for (var i = 0; i < hasChecked.length; i++) {
 		if (hasChecked[i] == 'checked') {
 			element.classList.remove('checked');
+			bulletInTask.classList.remove('finish');
 			checkTypeTask('remove');
 		} else {
 			element.classList.add('checked');
+			bulletInTask.classList.add('finish');
 			checkTypeTask('add');
 		}
 	}
 
 	function checkTypeTask(typeReq) {
-		var elementsForToggleClass = null;
+		var elementsForToggleClass = null,
+				checkAllSubTasks = null;
 
 		if (typeTaskControl == 'subTask') {
 			elementsForToggleClass = buttomControl;
 		} else if (typeTaskControl == 'category') {
 			var contentTask = rowTask.nextElementSibling;
 			elementsForToggleClass = contentTask.querySelectorAll('.play-pause-task i'),
-			checkAllSubtasks = contentTask.querySelectorAll('.check-task .check');
+			checkAllSubTasks = contentTask.querySelectorAll('.check-task .check'),
+			allBulletsTask = contentTask.querySelectorAll('.bullet');
 		}
 
 		if (typeReq == 'remove') {
 			removeActiveClass(elementsForToggleClass, 'fa-stop', 'fa-play');
-			removeActiveClass(checkAllSubtasks, 'checked', 'class');
+			if (checkAllSubTasks) {
+				removeActiveClass(checkAllSubTasks, 'checked', 'class');
+				removeActiveClass(allBulletsTask, 'finish', 'class');
+			}
 		} else {
 			removeActiveClass(elementsForToggleClass, 'fa-play', 'fa-stop');
-			removeActiveClass(checkAllSubtasks, 'class', 'checked');
+			if (checkAllSubTasks) {
+				removeActiveClass(checkAllSubTasks, 'class', 'checked');
+				removeActiveClass(allBulletsTask, 'class', 'finish');
+			}
 		}
 	}
 }
