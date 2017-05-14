@@ -141,7 +141,7 @@
 					.content-task {
 						background-color: lighten($default-theme, 35%);
 						height: 0;
-						overflow-y: auto;
+						overflow: hidden;
 
 						.row-sub-task {
 							border: 0;

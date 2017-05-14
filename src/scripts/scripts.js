@@ -144,14 +144,14 @@ function toggleMenu() {
 function toggleDetailsTask(toggleButtom) {
 	var rowTaskClicked = toggleButtom.parentElement.parentElement.parentElement,
 			iconButtom = toggleButtom.childNodes[0],
-			contentTaskClicked = rowTaskClicked.querySelectorAll('.content-task'),
+			contentTaskClicked = rowTaskClicked.querySelector('.content-task'),
+			allSubTasks = contentTaskClicked.querySelectorAll('.row-sub-task'),
 			allRowTasks = document.querySelectorAll('.row-task'),
 			allContentTasks = document.querySelectorAll('.content-task'),
 			allButtomIcon = document.querySelectorAll('.toggle-details i'),
 			hasActive = checkHasClass(rowTaskClicked);
 
 	removeActiveClass(allButtomIcon, 'fa-minus', 'fa-plus');
-	removeActiveClass(allRowTasks);
 	removeActiveClass(allRowTasks);
 
 	for (var i = 0; i < allContentTasks.length; i++) {
@@ -161,12 +161,12 @@ function toggleDetailsTask(toggleButtom) {
 	for (var i = 0; i < hasActive.length; i++) {
 		if (hasActive[i] == 'active') {
 			rowTaskClicked.classList.remove('active');
-			contentTaskClicked[0].style.height = 0;
+			contentTaskClicked.style.height = 0;
 			iconButtom.classList.remove('fa-minus');
 			iconButtom.classList.add('fa-plus');
 		} else {
 			rowTaskClicked.classList.add('active');
-			contentTaskClicked[0].style.height = '160px';
+			contentTaskClicked.style.height = allSubTasks.length * 40 + 'px';
 			iconButtom.classList.add('fa-minus');
 			iconButtom.classList.remove('fa-plus');
 		}
