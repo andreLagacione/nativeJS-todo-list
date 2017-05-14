@@ -56,7 +56,7 @@
 						@include ellipsis;
 						font-size: 14px;
 						color: $gray;
-						width: 55%;
+						width: 50%;
 						line-height: 40px;
 
 						&.task {
@@ -102,6 +102,40 @@
 						font-size: 14px;
 						color: $gray;
 						line-height: 40px;
+					}
+
+					.check-task {
+						width: 5%;
+						text-align: center;
+
+						.check {
+							width: 20px;
+							height: 20px;
+							display: inline-block;
+							margin: 9px auto 0;
+							border: 3px solid darken($default-theme, 10%);
+							border-radius: 3px;
+							position: relative;
+							cursor: pointer;
+
+							&:after {
+								@include scale(0);
+								@include transition-ease(.15s);
+								content: 'X';
+								color: darken($default-theme, 10%);
+								position: absolute;
+								left: 3px;
+								top: 2px;
+								font-size: 12px;
+								font-weight: bold;
+							}
+
+							&.checked {
+								&:after {
+									@include scale(1);
+								}
+							}
+						}
 					}
 
 					.content-task {
