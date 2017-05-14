@@ -284,3 +284,48 @@ function countTimeInTask(currentTime, elementTimeInTask, requestInterval) {
 		clearInterval(controlInterval);
 	}
 }
+
+
+function toggleFinish(element) {
+	var checkbox = element.parentElement,
+			hasChecked = checkHasClass(element),
+			rowTask = checkbox.parentElement,
+			typeTask = checkHasClass(rowTask),
+			buttomControl = rowTask.querySelectorAll('.play-pause-task i'),
+			typeTaskControl = null;
+
+	for (var i = 0; i < typeTask.length; i++) {
+		if (typeTask[i] == 'row-sub-task') {
+			typeTaskControl = 'subTask';
+		} else if (typeTask[i] == 'top-task') {
+			typeTaskControl = 'category';
+		}
+	}
+
+	for (var i = 0; i < hasChecked.length; i++) {
+		if (hasChecked[i] == 'active') {
+			element.classList.remove('active');
+			checkTypeTask('remove');
+		} else {
+			element.classList.add('active');
+			checkTypeTask('add');
+		}
+	}
+
+	function checkTypeTask(typeReq) {
+		var elementsForToggleClass = null;
+
+		if (typeTaskControl == 'subTask') {
+			elementsForToggleClass = buttomControl;
+		} else if (typeTaskControl == 'category') {
+			var contentTask = rowTask.nextElementSibling;
+			elementsForToggleClass = contentTask.querySelectorAll('.play-pause-task i');
+		}
+
+		if (typeReq == 'remove') {
+			removeActiveClass(elementsForToggleClass, 'fa-stop', 'fa-play');
+		} else {
+			removeActiveClass(elementsForToggleClass, 'fa-play', 'fa-stop');
+		}
+	}
+}

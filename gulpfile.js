@@ -25,7 +25,7 @@ gulp.task('sass', function() {
 gulp.task('useref', function() {
   return gulp.src('src/index.html')
   .pipe(useref())
-  .pipe(gulpIf('*.js', uglify()))
+  // .pipe(gulpIf('*.js', uglify()))
   .pipe(gulp.dest(distFolder))
 });
 
