@@ -26,6 +26,12 @@ $themes: (
 	text-overflow: ellipsis;
 }
 
+@mixin centerXY {
+	display: flex;
+	vertical-align: middle;
+	align-items: center;
+}
+
 @mixin transition-ease($value) {
 	-webkit-transition: $value all ease-in-out;
 	   -moz-transition: $value all ease-in-out;

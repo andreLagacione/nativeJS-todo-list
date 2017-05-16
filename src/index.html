@@ -718,19 +718,62 @@
 							<fieldset>
 								<div class="row-form full-hidden">
 									<div class="column-form left">
-										<label class="field-name">Task name *</label>
-										<input type="text" class="field-form" name="task-name" />
+										<label for="task-name-new-task" class="field-name">Task name *</label>
+										<input type="text" class="field-form" name="task-name" id="task-name-new-task" />
+										<span class="icon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->
 
 									<div class="column-form right">
-										<label class="field-name">Category *</label>
-										<select class="field-form" name="category-task">
+										<label for="category-new-task" class="field-name">Category *</label>
+										<select class="field-form" name="category-task" id="category-new-task">
+											<option value=""></option>
 											<option value="Option 1">Option 1</option>
 											<option value="Option 2">Option 2</option>
 											<option value="Option 3">Option 3</option>
 										</select>
+										<span class="icon"><i class="fa fa-flag" aria-hidden="true"></i></span>
 										<a href="#" title="Create category" class="create-category">Create category</a>
+
+										<div id="create-new-category" class="full-hidden">
+											<header class="top-category full-hidden">
+												<span class="icon-selected"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
+												<div class="icon-text">Category icon</div>
+											</header>
+
+											<div class="icon-list">
+												<div class="row-icon">
+													<span class="icon-selected"><i class="fa fa-th" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="row-icon">
+													<span class="icon-selected"><i class="fa fa-paperclip" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="row-icon">
+													<span class="icon-selected"><i class="fa fa-text-height" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="row-icon">
+													<span class="icon-selected"><i class="fa fa-paragraph" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="row-icon">
+													<span class="icon-selected"><i class="fa fa-fast-forward" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+											</div>
+											<!--/icon-list-->
+										</div>
 									</div>
 									<!--/column-form-->
 								</div>
@@ -738,14 +781,16 @@
 
 								<div class="row-form full-hidden">
 									<div class="column-form left">
-										<label class="field-name">Estimated time *</label>
-										<input type="tel" class="field-form" name="estimated-time" />
+										<label for="estimated-time-new-task" class="field-name">Estimated time *</label>
+										<input type="tel" class="field-form" name="estimated-time" id="estimated-time-new-task" />
+										<span class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->
 
 									<div class="column-form right">
-										<label class="field-name">Date *</label>
-										<input type="tel" class="field-form" name="date" />
+										<label for="date-new-task" class="field-name">Date *</label>
+										<input type="tel" class="field-form" name="date" id="date-new-task" />
+										<span class="icon"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->
 								</div>
