@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="gh-pages/images/favicon.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
 
     <!-- import css files -->
 		<link type="text/css" rel="stylesheet" media="all" href="gh-pages/styles/main.min.css" />
@@ -198,19 +198,19 @@
 					<div class="content-block charts full-hidden">
 						<div class="chart-box triple-width">
 							<strong class="title-chart">Late tasks</strong>
-							<div class="chart"><img src="gh-pages/images/chart1.png" alt="" class="img-responsive" /></div>
+							<div class="chart"><img src="images/chart1.png" alt="" class="gh-pages/img-responsive" /></div>
 						</div>
 						<!--/chart-box-->
 
 						<div class="chart-box triple-width">
 							<strong class="title-chart">Finish tasks</strong>
-							<div class="chart"><img src="gh-pages/images/chart2.png" alt="" class="img-responsive" /></div>
+							<div class="chart"><img src="images/chart2.png" alt="" class="gh-pages/img-responsive" /></div>
 						</div>
 						<!--/chart-box-->
 
 						<div class="chart-box triple-width">
 							<strong class="title-chart">Opened tasks</strong>
-							<div class="chart"><img src="gh-pages/images/chart3.png" alt="" class="img-responsive" /></div>
+							<div class="chart"><img src="images/chart3.png" alt="" class="gh-pages/img-responsive" /></div>
 						</div>
 						<!--/chart-box-->
 					</div>
@@ -223,7 +223,7 @@
 						<h2 class="block-name">My tasks</h2>
 					</header>
 
-					<div class="content-block">
+					<div class="content-block scrool">
 						<div class="row-task full-hidden">
 							<header class="top-task full-hidden">
 								<div class="box-button">
@@ -231,8 +231,12 @@
 								</div>
 								<h3 class="title task">Title task</h3>
 								<div class="status"><span class="bullet normal"></span></div>
-								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">00:00:00</div>
-								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+								<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+									<span class="check" onClick="toggleFinish(this)"></span>
+								</div>
 							</header>
 							<!--/top-task-->
 
@@ -243,8 +247,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -254,8 +262,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -265,8 +277,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -276,8 +292,27 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 							</div>
@@ -292,8 +327,12 @@
 								</div>
 								<h3 class="title task">Title task</h3>
 								<div class="status"><span class="bullet normal"></span></div>
-								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">00:00:00</div>
-								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+								<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+									<span class="check" onClick="toggleFinish(this)"></span>
+								</div>
 							</header>
 							<!--/top-task-->
 
@@ -304,8 +343,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -315,8 +358,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -326,8 +373,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -337,8 +388,27 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 							</div>
@@ -353,8 +423,12 @@
 								</div>
 								<h3 class="title task">Title task</h3>
 								<div class="status"><span class="bullet normal"></span></div>
-								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">00:00:00</div>
-								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+								<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+									<span class="check" onClick="toggleFinish(this)"></span>
+								</div>
 							</header>
 							<!--/top-task-->
 
@@ -365,8 +439,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -376,8 +454,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -387,8 +469,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -398,8 +484,27 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 							</div>
@@ -414,8 +519,12 @@
 								</div>
 								<h3 class="title task">Title task</h3>
 								<div class="status"><span class="bullet normal"></span></div>
-								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">00:00:00</div>
-								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+								<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+									<span class="check" onClick="toggleFinish(this)"></span>
+								</div>
 							</header>
 							<!--/top-task-->
 
@@ -426,8 +535,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -437,8 +550,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -448,8 +565,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -459,8 +580,27 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 							</div>
@@ -475,8 +615,12 @@
 								</div>
 								<h3 class="title task">Title task</h3>
 								<div class="status"><span class="bullet normal"></span></div>
-								<div class="time total relative show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">00:00:00</div>
-								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+								<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+								<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+								<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+									<span class="check" onClick="toggleFinish(this)"></span>
+								</div>
 							</header>
 							<!--/top-task-->
 
@@ -487,8 +631,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -498,8 +646,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -509,8 +661,12 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 
@@ -520,14 +676,143 @@
 									</div>
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
 									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
+								</div>
+								<!--/row-sub-task -->
+
+								<div class="row-sub-task full-hidden">
+									<div class="box-button">
+										<span class="buttom play-pause-task" onClick="toggleTimeTask(this)"><i class="fa fa-play" aria-hidden="true"></i></span>
+									</div>
+									<h4 class="title sub-task">Sub-task title</h4>
+									<div class="status"><span class="bullet normal"></span></div>
+									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
+									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
+										<span class="check" onClick="toggleFinish(this)"></span>
+									</div>
 								</div>
 								<!--/row-sub-task -->
 							</div>
 							<!--/content-task-->
 						</div>
 						<!--/row-task-->
+					</div>
+					<!--/content-block-->
+				</div>
+				<!--/block-attivities-->
+
+				<div class="block-attivities double-width right">
+					<header class="top-block">
+						<h2 class="block-name">Create new task</h2>
+					</header>
+
+					<div class="content-block scrool">
+						<form id="create-new-task" action="#" method="post">
+							<fieldset>
+								<div class="row-form full-hidden">
+									<div class="column-form left">
+										<label for="task-name-new-task" class="field-name">Task name *</label>
+										<input type="text" class="field-form" name="task-name" id="task-name-new-task" />
+										<span class="icon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+									</div>
+									<!--/column-form-->
+
+									<div class="column-form right">
+										<label for="category-new-task" class="field-name">Category *</label>
+										<select class="field-form" name="category-task" id="category-new-task">
+											<option value=""></option>
+											<option value="Option 1">Option 1</option>
+											<option value="Option 2">Option 2</option>
+											<option value="Option 3">Option 3</option>
+										</select>
+										<span class="icon"><i class="fa fa-flag" aria-hidden="true"></i></span>
+										<a href="#" title="Create category" class="create-category">Create category</a>
+									</div>
+									<!--/column-form-->
+								</div>
+								<!--/row-form-->
+
+								<div class="row-form create-category">
+									<div class="column-form left">
+										<label for="category-name-new-category" class="field-name">Category name *</label>
+										<input type="tel" class="field-form" name="category-name" id="category-name-new-category" />
+										<span class="icon"><i class="fa fa-tags" aria-hidden="true"></i></span>
+									</div>
+									<!--/column-form-->
+
+									<div class="column-form right">
+										<div id="create-new-category">
+											<header class="field-form category relative">
+												<span class="icon selected"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
+												<span class="indicator"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+												<div class="field-name icon-text">Category icon</div>
+											</header>
+
+											<div class="icon-list">
+												<div class="field-form relative row-icon">
+													<span class="icon"><i class="fa fa-th" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="field-form relative row-icon">
+													<span class="icon"><i class="fa fa-paperclip" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="field-form relative row-icon">
+													<span class="icon"><i class="fa fa-text-height" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="field-form relative row-icon">
+													<span class="icon"><i class="fa fa-paragraph" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+
+												<div class="field-form relative row-icon">
+													<span class="icon"><i class="fa fa-fast-forward" aria-hidden="true"></i></span>
+													<div class="icon-text">Category icon</div>
+												</div>
+												<!--/row-icon-->
+											</div>
+											<!--/icon-list-->
+										</div>
+									</div>
+									<!--/column-form-->
+								</div>
+								<!--/row-form-->
+
+								<div class="row-form full-hidden">
+									<div class="column-form left">
+										<label for="estimated-time-new-task" class="field-name">Estimated time *</label>
+										<input type="tel" class="field-form" name="estimated-time" id="estimated-time-new-task" />
+										<span class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+									</div>
+									<!--/column-form-->
+
+									<div class="column-form right">
+										<label for="date-new-task" class="field-name">Date *</label>
+										<input type="tel" class="field-form" name="date" id="date-new-task" />
+										<span class="icon"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
+									</div>
+									<!--/column-form-->
+								</div>
+								<!--/row-form-->
+
+								<button type="button" class="create-task" name="create-new-task">Create</button>
+							</fieldset>
+						</form>
 					</div>
 					<!--/content-block-->
 				</div>
