@@ -1,5 +1,4 @@
 // TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
-// TODO - Criar alguma coisa para finalizar a tarefa e não deixar a mesma contar tempo
 
 
 // GLOBAL VARIABLES
@@ -285,11 +284,10 @@ function countTimeInTask(currentTime, elementTimeInTask, requestInterval) {
 	}
 }
 
-
 function toggleFinish(element) {
 	clearInterval(intervals.task);
 	clearInterval(intervals.category);
-	
+
 	var checkbox = element.parentElement,
 			hasChecked = checkHasClass(element),
 			rowTask = checkbox.parentElement,
@@ -344,5 +342,21 @@ function toggleFinish(element) {
 				removeActiveClass(allBulletsTask, 'class', 'finish');
 			}
 		}
+	}
+}
+
+function animateLabel(element) {
+	var label = element.previousElementSibling;
+	label.classList.remove('inactive');
+	label.classList.add('active');
+}
+
+function removeAnimateLabel(element) {
+	var input = element.value,
+			label = element.previousElementSibling;
+
+	if (!input) {
+		label.classList.remove('active');
+		label.classList.add('inactive');
 	}
 }

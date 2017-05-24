@@ -719,14 +719,14 @@
 								<div class="row-form full-hidden">
 									<div class="column-form left">
 										<label for="task-name-new-task" class="field-name">Task name *</label>
-										<input type="text" class="field-form" name="task-name" id="task-name-new-task" />
+										<input type="text" class="field-form" name="task-name" id="task-name-new-task" onFocus="animateLabel(this)" onBlur="removeAnimateLabel(this)" />
 										<span class="icon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->
 
 									<div class="column-form right">
 										<label for="category-new-task" class="field-name">Category *</label>
-										<select class="field-form" name="category-task" id="category-new-task">
+										<select class="field-form" name="category-task" id="category-new-task" onFocus="animateLabel(this)" onBlur="removeAnimateLabel(this)">
 											<option value=""></option>
 											<option value="Option 1">Option 1</option>
 											<option value="Option 2">Option 2</option>
@@ -742,7 +742,7 @@
 								<div class="row-form create-category">
 									<div class="column-form left">
 										<label for="category-name-new-category" class="field-name">Category name *</label>
-										<input type="tel" class="field-form" name="category-name" id="category-name-new-category" />
+										<input type="tel" class="field-form" name="category-name" id="category-name-new-category" onFocus="animateLabel(this)" onBlur="removeAnimateLabel(this)" />
 										<span class="icon"><i class="fa fa-tags" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->
@@ -796,14 +796,14 @@
 								<div class="row-form full-hidden">
 									<div class="column-form left">
 										<label for="estimated-time-new-task" class="field-name">Estimated time *</label>
-										<input type="tel" class="field-form" name="estimated-time" id="estimated-time-new-task" />
+										<input type="tel" class="field-form" name="estimated-time" id="estimated-time-new-task" onFocus="animateLabel(this)" onBlur="removeAnimateLabel(this)" />
 										<span class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->
 
 									<div class="column-form right">
 										<label for="date-new-task" class="field-name">Date *</label>
-										<input type="tel" class="field-form" name="date" id="date-new-task" />
+										<input type="tel" class="field-form" name="date" id="date-new-task" onFocus="animateLabel(this)" onBlur="removeAnimateLabel(this)" />
 										<span class="icon"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->
