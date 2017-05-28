@@ -360,3 +360,29 @@ function removeAnimateLabel(element) {
 		label.classList.add('inactive');
 	}
 }
+
+function validateForm(event, form) {
+	event.preventDefault();
+
+	var inputsToValid = document.getElementsByClassName('validate-input'),
+			isValid = true;
+
+	for (var i = 0; i < inputsToValid.length; i++) {
+		if (inputsToValid[i].value == '') {
+			var messageAlert = inputsToValid[i].getAttribute('text-from-alert'),
+					spanAlert = document.createElement('span'),
+					alertText = document.createTextNode(messageAlert),
+					childNodesList = inputsToValid[i].parentNode.childNodes;
+
+			spanAlert.appendChild(alertText);
+			spanAlert.className = 'alert-text';
+			inputsToValid[i].parentNode.insertBefore(spanAlert, childNodesList[childNodesList.length]);
+
+			isValid = false;
+		}
+	}
+
+	if (!isValid) {
+
+	}
+}
