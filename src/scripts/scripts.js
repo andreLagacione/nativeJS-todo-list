@@ -3,9 +3,10 @@
 
 // GLOBAL VARIABLES
 var intervals = {
-	category: null,
-	task: null
-};
+			category: null,
+			task: null
+		},
+		controlShowCategories = 0;
 
 window.onload = function loadWindow() {
 	var now = new Date();
@@ -37,6 +38,22 @@ function removeActiveClass(element, classForRemove, classForAdd, classControl) {
 			element[i].classList.add(classForAdd);
 		} else {
 			element[i].classList.remove(classControl);
+		}
+	}
+}
+
+function checkRemoveAlertText(baseNode) {
+	var parentNodeChildrens = baseNode.parentNode.childNodes,
+			hasAlert = parentNodeChildrens[parentNodeChildrens.length - 1];
+
+	if (hasAlert && hasAlert.nodeName !== '#text') {
+		var hasClass = checkHasClass(hasAlert);
+
+		for (var i = 0; i < hasClass.length; i++) {
+			if (hasClass[i] == 'alert-text') {
+				hasAlert.remove();
+				break;
+			}
 		}
 	}
 }
@@ -346,21 +363,8 @@ function toggleFinish(element) {
 }
 
 function animateLabel(element) {
-	var label = element.previousElementSibling,
-			parentNodeChildrens = element.parentNode.childNodes,
-			hasAlert = parentNodeChildrens[parentNodeChildrens.length - 1];
-
-	if (hasAlert && hasAlert.nodeName !== '#text') {
-		var hasClass = checkHasClass(hasAlert);
-
-		for (var i = 0; i < hasClass.length; i++) {
-			if (hasClass[i] == 'alert-text') {
-				hasAlert.remove();
-				break;
-			}
-		}
-	}
-
+	var label = element.previousElementSibling;
+	checkRemoveAlertText(element);
 	label.classList.remove('inactive');
 	label.classList.add('active');
 }
@@ -382,21 +386,60 @@ function validateForm(event, form) {
 			isValid = true;
 
 	for (var i = 0; i < inputsToValid.length; i++) {
+		var childNodesList = inputsToValid[i].parentNode.childNodes,
+				lastNode = childNodesList[childNodesList.length - 1],
+				hasAlert = false;
+
+		if (lastNode.nodeName !== '#text') {
+			var hasClass = checkHasClass(lastNode);
+
+			for (var j = 0; j < hasClass.length; j++) {
+				if (hasClass[j] == 'alert-text') {
+					hasAlert = true;
+					break;
+				}
+			}
+		}
+
+		console.log(lastNode);
+
 		if (inputsToValid[i].value == '') {
-			var messageAlert = inputsToValid[i].getAttribute('text-from-alert'),
-					spanAlert = document.createElement('span'),
-					alertText = document.createTextNode(messageAlert),
-					childNodesList = inputsToValid[i].parentNode.childNodes;
+			if (!hasAlert) {
+				var messageAlert = inputsToValid[i].getAttribute('text-from-alert'),
+						spanAlert = document.createElement('span'),
+						alertText = document.createTextNode(messageAlert);
 
-			spanAlert.appendChild(alertText);
-			spanAlert.className = 'alert-text';
-			inputsToValid[i].parentNode.insertBefore(spanAlert, childNodesList[childNodesList.length]);
+				spanAlert.appendChild(alertText);
+				spanAlert.className = 'alert-text';
+				inputsToValid[i].parentNode.insertBefore(spanAlert, childNodesList[childNodesList.length]);
 
-			isValid = false;
+				isValid = false;
+			}
 		}
 	}
 
-	if (!isValid) {
+	if (isValid) {
+		console.log('criar função para armazenar os dados do form e limpa-lo');
+	}
+}
 
+function showCreateCategories(event) {
+	event.preventDefault();
+	var rowCreateCategory = document.getElementsByClassName('row-create-category'),
+			hasActive = checkHasClass(rowCreateCategory[0]),
+			inputCategoryName = document.getElementById('category-name-new-category');
+
+	checkRemoveAlertText(inputCategoryName);
+
+	for (var i = 0; i < hasActive.length; i++) {
+		if (hasActive[i] == 'hide') {
+			removeActiveClass(rowCreateCategory, 'hide', 'show');
+			inputCategoryName.setAttribute('text-from-alert', 'Report category name');
+			inputCategoryName.classList.add('validate-input');
+		} else if (hasActive[i] == 'show') {
+			removeActiveClass(rowCreateCategory, 'show', 'hide');
+			inputCategoryName.removeAttribute('text-from-alert', 'Report category name');
+			inputCategoryName.classList.remove('validate-input');
+		}
 	}
 }

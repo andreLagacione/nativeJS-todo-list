@@ -733,16 +733,16 @@
 											<option value="Option 3">Option 3</option>
 										</select>
 										<span class="icon"><i class="fa fa-flag" aria-hidden="true"></i></span>
-										<a href="#" title="Create category" class="create-category">Create category</a>
+										<a href="#" title="Create category" class="create-category" onClick="showCreateCategories(event)">Create category</a>
 									</div>
 									<!--/column-form-->
 								</div>
 								<!--/row-form-->
 
-								<div class="row-form create-category">
+								<div class="row-form row-create-category hide">
 									<div class="column-form left">
 										<label for="category-name-new-category" class="field-name">Category name *</label>
-										<input type="tel" class="field-form validate-input" name="category-name" text-from-alert="Report category name" id="category-name-new-category" onFocus="animateLabel(this)" onBlur="removeAnimateLabel(this)" />
+										<input type="tel" class="field-form" name="category-name" id="category-name-new-category" onFocus="animateLabel(this)" onBlur="removeAnimateLabel(this)" />
 										<span class="icon"><i class="fa fa-tags" aria-hidden="true"></i></span>
 									</div>
 									<!--/column-form-->

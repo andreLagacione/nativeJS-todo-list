@@ -10,11 +10,20 @@
 					min-height: 73px;
 					width: 100%;
 
-					&.create-category {
-						display: none;
+					&.row-create-category {
+						overflow: hidden;
+						min-height: 0;
+						margin: 0;
 
-						&.active {
-							display: block;
+						&.show {
+							@include transition-ease(.3s);
+							margin-bottom: 15px;
+							height: 73px;
+						}
+
+						&.hide {
+							@include transition-ease(.3s);
+							height: 0;
 						}
 					}
 
