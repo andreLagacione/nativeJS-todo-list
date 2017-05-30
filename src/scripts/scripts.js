@@ -346,7 +346,21 @@ function toggleFinish(element) {
 }
 
 function animateLabel(element) {
-	var label = element.previousElementSibling;
+	var label = element.previousElementSibling,
+			parentNodeChildrens = element.parentNode.childNodes,
+			hasAlert = parentNodeChildrens[parentNodeChildrens.length - 1];
+
+	if (hasAlert && hasAlert.nodeName !== '#text') {
+		var hasClass = checkHasClass(hasAlert);
+
+		for (var i = 0; i < hasClass.length; i++) {
+			if (hasClass[i] == 'alert-text') {
+				hasAlert.remove();
+				break;
+			}
+		}
+	}
+
 	label.classList.remove('inactive');
 	label.classList.add('active');
 }
