@@ -1,4 +1,5 @@
 // TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
+// TODO - criar função para mostrar a lista de ícones para adiconar na nova categoria
 // TDOD - criar função para salvar a nova categoria quando o form for válido
 
 function actionsSidebarMenu(item) {
@@ -385,4 +386,8 @@ function showCreateCategories(event) {
 			inputCategoryName.classList.remove('validate-input');
 		}
 	}
+}
+
+function showListIcons(element) {
+	console.log(element);
 }
