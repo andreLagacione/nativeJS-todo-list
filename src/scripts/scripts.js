@@ -389,5 +389,16 @@ function showCreateCategories(event) {
 }
 
 function showListIcons(element) {
-	console.log(element);
+	var listIcons = document.getElementsByClassName('icon-list'),
+			hasClass = checkHasClass(listIcons[0]);
+
+	console.log(listIcons);
+
+	for (var i = 0; i < hasClass.length; i++) {
+		if (hasClass[i] == 'active') {
+			removeActiveClass(listIcons, 'active', 'inactive');
+		} else {
+			removeActiveClass(listIcons, 'inactive', 'active');
+		}
+	}
 }

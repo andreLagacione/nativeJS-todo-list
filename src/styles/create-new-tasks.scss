@@ -11,7 +11,6 @@
 					width: 100%;
 
 					&.row-create-category {
-						overflow: hidden;
 						min-height: 0;
 						margin: 0;
 
@@ -19,11 +18,21 @@
 							@include transition-ease(.3s);
 							margin-bottom: 15px;
 							height: 73px;
+
+							> div {
+								@include transition-ease(.3s);
+								height: 40px;
+							}
 						}
 
 						&.hide {
 							@include transition-ease(.3s);
 							height: 0;
+
+							> div {
+								@include transition-ease(.3s);
+								height: 0;
+							}
 						}
 					}
 
@@ -152,14 +161,19 @@
 						top: 40px;
 						z-index: 10;
 						background-color: $white;
-						height: 0;
-						overflow: hidden;
-						opacity: 0;
 
 						&.active {
+							@include transition-ease(.3s);
 							height: 120px;
 							opacity: 1;
 							overflow-y: auto;
+						}
+
+						&.inactive {
+							@include transition-ease(.3s);
+							height: 0;
+							opacity: 0;
+							overflow: hidden;
 						}
 					}
 
