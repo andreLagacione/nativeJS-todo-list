@@ -1,6 +1,5 @@
 // TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
-// TODO - criar função para mostrar a lista de ícones para adiconar na nova categoria
-// TDOD - criar função para salvar a nova categoria quando o form for válido
+// TDOD - criar função para salvar a nova categoria quando o form for válido, de forma dinâmica para ser usado em qualquer form
 
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
@@ -345,8 +344,6 @@ function validateForm(event, form) {
 			}
 		}
 
-		console.log(lastNode);
-
 		if (inputsToValid[i].value == '') {
 			if (!hasAlert) {
 				var messageAlert = inputsToValid[i].getAttribute('text-from-alert'),
@@ -392,8 +389,6 @@ function showListIcons(element) {
 	var listIcons = document.getElementsByClassName('icon-list'),
 			hasClass = checkHasClass(listIcons[0]);
 
-	console.log(listIcons);
-
 	for (var i = 0; i < hasClass.length; i++) {
 		if (hasClass[i] == 'active') {
 			removeActiveClass(listIcons, 'active', 'inactive');
@@ -401,4 +396,22 @@ function showListIcons(element) {
 			removeActiveClass(listIcons, 'inactive', 'active');
 		}
 	}
+}
+
+function hideListIcons() {
+	var listIcons = document.getElementsByClassName('icon-list');
+	removeActiveClass(listIcons, 'active', 'inactive');
+}
+
+function getSelectedIcon(row) {
+	var iconSelected = row.querySelectorAll('.icon-text'),
+			nameIconSelected = iconSelected[0].innerHTML,
+			headerIconText = document.querySelectorAll('.field-name.icon-text'),
+			headerIconBox = document.getElementsByClassName('selected-icon-box'),
+			headerIcon = headerIconBox[0].getElementsByClassName('fa'),
+			classListIcon = checkHasClass(headerIcon[0]);
+
+	headerIconText[0].innerHTML = nameIconSelected;
+	headerIcon[0].classList.remove(classListIcon[1]);
+	headerIcon[0].classList.add(nameIconSelected);
 }
