@@ -138,9 +138,16 @@ function configureTooltip(anchorElement) {
 			tooltipWidth = tooltipComponent.offsetWidth,
 			rect = anchorElement.getBoundingClientRect(),
 			positionTooltip = {
-				left: rect.left,
 				top: rect.top - rect.height
 			};
+
+	if ((rect.width / 2) < (tooltipWidth / 2)) {
+		positionTooltip.left = rect.left - ((tooltipWidth / 2) - (rect.width / 2));
+	} else if ((rect.width / 2) > (tooltipWidth / 2)) {
+		positionTooltip.left = rect.left + ((rect.width / 2) - (tooltipWidth / 2));
+	} else {
+		positionTooltip.left = rect.left;
+	}
 
 	tooltipComponent.innerHTML = tooltipText;
 	tooltipComponent.style.left = positionTooltip.left + 'px';
