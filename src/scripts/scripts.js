@@ -1,5 +1,4 @@
 // TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
-// TDOD - criar função para salvar a nova categoria quando o form for válido, de forma dinâmica para ser usado em qualquer form
 
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
@@ -333,6 +332,9 @@ function validateForm(event, form) {
 	event.preventDefault();
 
 	var inputsToValid = document.getElementsByClassName('validate-input'),
+			formElements = form.elements,
+			noFormElement = form.getElementsByClassName('include-this'),
+			valuesNames = [],
 			isValid = true;
 
 	for (var i = 0; i < inputsToValid.length; i++) {
@@ -367,7 +369,32 @@ function validateForm(event, form) {
 	}
 
 	if (isValid) {
-		console.log('criar função para armazenar os dados do form e limpa-lo');
+		for (var i = 0; i < formElements.length; i++) {
+			var element = formElements[i],
+			 		elementTag = element.tagName.toLowerCase();
+
+			if (elementTag == 'input' || elementTag == 'select' || elementTag == 'textarea') {
+				if (elementTag.value) {
+					valuesNames.push({
+						name: element.name,
+						value: element.value
+					});
+				}
+			}
+		}
+
+		if (noFormElement) {
+			for (var i = 0; i < noFormElement.length; i++) {
+				var element = noFormElement[i];
+
+				valuesNames.push({
+					name: element.getAttribute('component-name'),
+					value: element.innerHTML
+				});
+			}
+		}
+
+		return valuesNames;
 	}
 }
 
