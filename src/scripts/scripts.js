@@ -1,4 +1,5 @@
 // TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
+// TODO - criar função para calcular a hora estimada das subcategorias e criar a hora estimada da categoria
 
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
@@ -184,11 +185,6 @@ function toggleTimeTask(buttomControl) {
 				minutes: parseInt(totalTimeInTask[1]),
 				seconds: parseInt(totalTimeInTask[2])
 			},
-			// estimedTime = {
-			// 	hours: parseInt(timeEstimedForTask[0]),
-			// 	minutes: parseInt(timeEstimedForTask[1]),
-			// 	seconds: parseInt(timeEstimedForTask[2])
-			// };
 			allSubTasks = document.querySelectorAll('.row-sub-task'),
 			allButtonsToggleTask = document.querySelectorAll('.play-pause-task .fa');
 
@@ -214,12 +210,12 @@ function toggleTimeTask(buttomControl) {
 	}
 
 	if (hasInterval) {
-		countTimeInTask(currentTime, elementTimeInTask, 'intervalTask');
-		countTimeInTask(totalCurrentTime, controlTimeInTask, 'intervalCategory');
+		countTimeInTask(currentTime, elementTimeInTask, 'intervalTask', statusSubTask);
+		countTimeInTask(totalCurrentTime, controlTimeInTask, 'intervalCategory', statusSubTask);
 	}
 }
 
-function countTimeInTask(currentTime, elementTimeInTask, requestInterval) {
+function countTimeInTask(currentTime, elementTimeInTask, requestInterval, bulletTask) {
 	var printTime = {},
 			controlInterval = setInterval(function() {
 		currentTime.seconds++;
@@ -239,6 +235,7 @@ function countTimeInTask(currentTime, elementTimeInTask, requestInterval) {
 		currentTime.hours < 10 ? printTime.hours = '0' + currentTime.hours : printTime.hours = currentTime.hours;
 
 		elementTimeInTask.innerHTML = printTime.hours + ':' + printTime.minutes + ':' + printTime.seconds;
+		chechTimeInTask(currentTime, bulletTask);
 	}, 1000);
 
 	if (requestInterval == 'intervalTask') {
@@ -248,6 +245,10 @@ function countTimeInTask(currentTime, elementTimeInTask, requestInterval) {
 	} else {
 		clearInterval(controlInterval);
 	}
+}
+
+function chechTimeInTask(currentTime, bulletTask) {
+	console.log(currentTime, bulletTask);
 }
 
 function toggleFinish(element) {
