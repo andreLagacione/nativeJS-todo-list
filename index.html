@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="gh-pages/images/favicon.png" />
 
     <!-- import css files -->
 		<link type="text/css" rel="stylesheet" media="all" href="gh-pages/styles/main.min.css" />
@@ -248,7 +248,7 @@
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
 									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
-									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">07:59:55</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
 									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
 										<span class="check" onClick="toggleFinish(this)"></span>
@@ -263,7 +263,7 @@
 									<h4 class="title sub-task">Sub-task title</h4>
 									<div class="status"><span class="bullet normal"></span></div>
 									<div class="time date show-tootip" tooltip-text="Date for finish" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">25/10/2017</div>
-									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">00:00:00</div>
+									<div class="time total show-tootip" tooltip-text="Total time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:01</div>
 									<div class="time estimated show-tootip" tooltip-text="Estimated time" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">10:00:00</div>
 									<div class="check-task show-tootip" tooltip-text="Finish task" onMouseEnter="configureTooltip(this)" onMouseLeave="hiddenTooltip()">
 										<span class="check" onClick="toggleFinish(this)"></span>
@@ -749,40 +749,40 @@
 
 									<div class="column-form right">
 										<div id="create-new-category">
-											<header class="field-form category relative">
-												<span class="icon selected"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
+											<header class="field-form category relative" onClick="showListIcons(this)">
+												<span class="icon selected selected-icon-box"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
 												<span class="indicator"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-												<div class="field-name icon-text">Category icon</div>
+												<div class="field-name icon-text include-this" component-name="category-icon">Category icon</div>
 											</header>
 
-											<div class="icon-list">
-												<div class="field-form relative row-icon">
+											<div class="icon-list inactive" onMouseLeave="hideListIcons()">
+												<div class="field-form relative row-icon" onClick="getSelectedIcon(this)">
 													<span class="icon"><i class="fa fa-th" aria-hidden="true"></i></span>
-													<div class="icon-text">Category icon</div>
+													<div class="icon-text">fa-th</div>
 												</div>
 												<!--/row-icon-->
 
-												<div class="field-form relative row-icon">
+												<div class="field-form relative row-icon" onClick="getSelectedIcon(this)">
 													<span class="icon"><i class="fa fa-paperclip" aria-hidden="true"></i></span>
-													<div class="icon-text">Category icon</div>
+													<div class="icon-text">fa-paperclip</div>
 												</div>
 												<!--/row-icon-->
 
-												<div class="field-form relative row-icon">
+												<div class="field-form relative row-icon" onClick="getSelectedIcon(this)">
 													<span class="icon"><i class="fa fa-text-height" aria-hidden="true"></i></span>
-													<div class="icon-text">Category icon</div>
+													<div class="icon-text">fa-text-height</div>
 												</div>
 												<!--/row-icon-->
 
-												<div class="field-form relative row-icon">
+												<div class="field-form relative row-icon" onClick="getSelectedIcon(this)">
 													<span class="icon"><i class="fa fa-paragraph" aria-hidden="true"></i></span>
-													<div class="icon-text">Category icon</div>
+													<div class="icon-text">fa-paragraph</div>
 												</div>
 												<!--/row-icon-->
 
-												<div class="field-form relative row-icon">
+												<div class="field-form relative row-icon" onClick="getSelectedIcon(this)">
 													<span class="icon"><i class="fa fa-fast-forward" aria-hidden="true"></i></span>
-													<div class="icon-text">Category icon</div>
+													<div class="icon-text">fa-fast-forward</div>
 												</div>
 												<!--/row-icon-->
 											</div>
@@ -824,6 +824,9 @@
 
 		<div id="tooltip-component">Estimated time</div>
 
-		<script src="gh-pages/scripts/main.min.js"></script>
+		<!-- build:js scripts/main.min.js -->
+    <script type="text/javascript" src="gh-pages/scripts/scripts.js"></script>
+    <script type="text/javascript" src="gh-pages/scripts/factory-functions.js"></script>
+  	<!-- endbuild -->
 	</body>
 </html>
