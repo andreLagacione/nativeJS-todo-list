@@ -450,3 +450,7 @@ function getSelectedIcon(row) {
 	headerIcon[0].classList.remove(classListIcon[1]);
 	headerIcon[0].classList.add(nameIconSelected);
 }
+
+function calculateSubTaskTime() {
+
+}

@@ -9,6 +9,7 @@ window.onload = function loadWindow() {
 	var now = new Date();
 	getDateDate(now);
 	getHour();
+	calculateSubTaskTime();
 
 	setInterval(function() {
 		getHour();
