@@ -452,5 +452,33 @@ function getSelectedIcon(row) {
 }
 
 function calculateSubTaskTime() {
+	var tasks = document.getElementsByClassName('row-task');
 
+	for (var i = 0; i < tasks.length; i++) {
+		var subTasks = tasks[i].getElementsByClassName('row-sub-task'),
+				estimetedTimeBox = tasks[i].querySelectorAll('.top-task .time.estimated');
+
+		if (subTasks.length > 0 || subTasks !== '') {
+			var sumTimeInTask = {
+				hours: 0,
+				minutes: 0,
+				seconds: 0
+			};
+
+			for (var j = 0; j < subTasks.length; j++) {
+				var estimatedTime = subTasks[j].getElementsByClassName('estimated'),
+						getValueInTask = estimatedTime[0].innerHTML.split(':');
+
+				sumTimeInTask.hours = sumTimeInTask.hours + parseInt(getValueInTask[0]);
+				sumTimeInTask.minutes = sumTimeInTask.minutes + parseInt(getValueInTask[1]);
+				sumTimeInTask.seconds = sumTimeInTask.seconds + parseInt(getValueInTask[2]);
+			}
+
+			if (sumTimeInTask.hours < 10) sumTimeInTask.hours = '0' + sumTimeInTask.hours;
+			if (sumTimeInTask.minutes < 10) sumTimeInTask.minutes = '0' + sumTimeInTask.minutes;
+			if (sumTimeInTask.seconds < 10) sumTimeInTask.seconds = '0' + sumTimeInTask.seconds;
+
+			estimetedTimeBox[0].innerHTML = sumTimeInTask.hours + ':' + sumTimeInTask.minutes + ':' + sumTimeInTask.seconds;
+		}
+	}
 }
