@@ -1,5 +1,6 @@
-// TODO - criar função para verificar o tempo gasto e comparar com a estimativa e alterando a cor do bullet de status
-// TODO - criar função para calcular a hora estimada das subcategorias e criar a hora estimada da categoria
+// TODO - criar função para verificar o tempo de cada task e pintar os bullets ao carregar a página
+// TODO - criar uma função para pegar o tempo decorrido de cada sub-tarefa e joga a somatoria no tempo total da tarefa
+// TODO - criar função para verificar o tempo total da tarefa e pintar o bullet, assim como foi feito para as sub-tarefas
 
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
@@ -248,7 +249,35 @@ function countTimeInTask(currentTime, elementTimeInTask, requestInterval, bullet
 }
 
 function chechTimeInTask(currentTime, bulletTask) {
-	console.log(currentTime, bulletTask);
+	var rowTask = bulletTask.parentNode.parentNode;
+			estimatedTimeBox = rowTask.querySelectorAll('.time.estimated'),
+			getEstimatedTime = estimatedTimeBox[0].innerHTML.split(':'),
+			estimatedHoursToSeconds = (parseInt(getEstimatedTime[0]) * 60 * 60).toFixed(0),
+			estimatedminutesToSeconds = (parseInt(getEstimatedTime[1]) * 60).toFixed(0),
+			estimatedSeconds = parseInt(getEstimatedTime[2]),
+			currentHourToSeconds = (currentTime.hours * 60 * 60).toFixed(0),
+			currentMinuteToSeconds = (currentTime.minutes * 60).toFixed(0),
+			currentSecond = currentTime.seconds,
+			sumSecondsInEstimatedTime = parseFloat(estimatedHoursToSeconds) + parseFloat(estimatedminutesToSeconds) + parseFloat(estimatedSeconds),
+			sumSecondsInCurrentTime = parseFloat(currentHourToSeconds) + parseFloat(currentMinuteToSeconds) + parseFloat(currentSecond),
+			warningTime = sumSecondsInEstimatedTime * 0.8;
+
+	if (sumSecondsInCurrentTime > warningTime) {
+		bulletTask.classList.remove('normal');
+		bulletTask.classList.add('warning');
+	}
+
+	if (sumSecondsInCurrentTime > sumSecondsInEstimatedTime) {
+		bulletTask.classList.remove('normal');
+		bulletTask.classList.remove('warning');
+		bulletTask.classList.add('danger');
+	}
+
+
+	console.log(typeof parseFloat(estimatedminutesToSeconds));
+	console.log(sumSecondsInEstimatedTime, sumSecondsInCurrentTime, warningTime);
+
+	// console.log(currentTime, bulletTask, getEstimatedTime);
 }
 
 function toggleFinish(element) {
