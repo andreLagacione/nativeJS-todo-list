@@ -272,12 +272,6 @@ function chechTimeInTask(currentTime, bulletTask) {
 		bulletTask.classList.remove('warning');
 		bulletTask.classList.add('danger');
 	}
-
-
-	console.log(typeof parseFloat(estimatedminutesToSeconds));
-	console.log(sumSecondsInEstimatedTime, sumSecondsInCurrentTime, warningTime);
-
-	// console.log(currentTime, bulletTask, getEstimatedTime);
 }
 
 function toggleFinish(element) {
