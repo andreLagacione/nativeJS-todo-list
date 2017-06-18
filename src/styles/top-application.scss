@@ -1,8 +1,40 @@
 @import '_variables';
 
+@keyframes animate-buttom {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		left: -100%;
+		opacity: 0;
+		width: 400%;
+		height: 400%;
+	}
+}
+
 @each $key, $value in $themes {
 		&.#{$key} {
 			$default-theme: map-get($value, color);
+
+			.animate-click {
+				position: relative;
+				overflow: hidden;
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -20%;
+					left: 40%;
+					opacity: 0;
+					background-color: lighten($default-theme, 10%);
+					width: 0;
+					height: 0;
+					border-radius: 50%;
+					animation-name: animate-buttom;
+					animation-duration: 1s;
+				}
+			}
 
       #top-aplication {
       	background-color: lighten($default-theme, 7%);

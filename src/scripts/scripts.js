@@ -1,4 +1,5 @@
-// TODO - 
+// TODO - configurar o babel, mudar o que der pra ES6 e começar a usar conisas mais recentes do ES
+// TODO - começar o configurar a aplicação para responsivo
 
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
