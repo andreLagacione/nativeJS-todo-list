@@ -1,5 +1,4 @@
 // TODO - criar função para verificar o tempo de cada task e pintar os bullets ao carregar a página
-// TODO - criar uma função para pegar o tempo decorrido de cada sub-tarefa e joga a somatoria no tempo total da tarefa
 // TODO - criar função para verificar o tempo total da tarefa e pintar o bullet, assim como foi feito para as sub-tarefas
 
 function actionsSidebarMenu(item) {
@@ -474,12 +473,12 @@ function getSelectedIcon(row) {
 	headerIcon[0].classList.add(nameIconSelected);
 }
 
-function calculateSubTaskTime() {
+function calculateSubTaskTime(timeInBox) {
 	var tasks = document.getElementsByClassName('row-task');
 
 	for (var i = 0; i < tasks.length; i++) {
 		var subTasks = tasks[i].getElementsByClassName('row-sub-task'),
-				estimetedTimeBox = tasks[i].querySelectorAll('.top-task .time.estimated');
+				elementTimeBox = tasks[i].querySelectorAll('.top-task .time.' + timeInBox);
 
 		if (subTasks.length > 0 || subTasks !== '') {
 			var sumTimeInTask = {
@@ -489,8 +488,8 @@ function calculateSubTaskTime() {
 			};
 
 			for (var j = 0; j < subTasks.length; j++) {
-				var estimatedTime = subTasks[j].getElementsByClassName('estimated'),
-						getValueInTask = estimatedTime[0].innerHTML.split(':');
+				var boxTime = subTasks[j].getElementsByClassName(timeInBox),
+						getValueInTask = boxTime[0].innerHTML.split(':');
 
 				sumTimeInTask.hours = sumTimeInTask.hours + parseInt(getValueInTask[0]);
 				sumTimeInTask.minutes = sumTimeInTask.minutes + parseInt(getValueInTask[1]);
@@ -501,7 +500,7 @@ function calculateSubTaskTime() {
 			if (sumTimeInTask.minutes < 10) sumTimeInTask.minutes = '0' + sumTimeInTask.minutes;
 			if (sumTimeInTask.seconds < 10) sumTimeInTask.seconds = '0' + sumTimeInTask.seconds;
 
-			estimetedTimeBox[0].innerHTML = sumTimeInTask.hours + ':' + sumTimeInTask.minutes + ':' + sumTimeInTask.seconds;
+			elementTimeBox[0].innerHTML = sumTimeInTask.hours + ':' + sumTimeInTask.minutes + ':' + sumTimeInTask.seconds;
 		}
 	}
 }
