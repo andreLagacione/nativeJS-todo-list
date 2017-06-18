@@ -1,5 +1,4 @@
-// TODO - criar função para verificar o tempo de cada task e pintar os bullets ao carregar a página
-// TODO - criar função para verificar o tempo total da tarefa e pintar o bullet, assim como foi feito para as sub-tarefas
+// TODO - 
 
 function actionsSidebarMenu(item) {
 	var categories = document.querySelectorAll('#main-menu > ul > li'),
@@ -245,6 +244,23 @@ function countTimeInTask(currentTime, elementTimeInTask, requestInterval, bullet
 		intervals.category = controlInterval
 	} else {
 		clearInterval(controlInterval);
+	}
+}
+
+function chechTimeInTaskOnLoadPage(element) {
+	var rowTask = document.querySelectorAll(element);
+
+	for (var i = 0; i < rowTask.length; i++) {
+		var time = rowTask[i].getElementsByClassName('total')[0].innerHTML,
+				bullet = rowTask[i].getElementsByClassName('bullet')[0],
+				splitTime = time.split(':'),
+				currentTime = {};
+
+		currentTime.hours = splitTime[0];
+		currentTime.minutes = splitTime[1];
+		currentTime.seconds = splitTime[2];
+
+		chechTimeInTask(currentTime, bullet);
 	}
 }
 

@@ -11,6 +11,8 @@ window.onload = function loadWindow() {
 	getHour();
 	calculateSubTaskTime('estimated');
 	calculateSubTaskTime('total');
+	chechTimeInTaskOnLoadPage('.top-task');
+	chechTimeInTaskOnLoadPage('.row-sub-task');
 
 	setInterval(function() {
 		getHour();
