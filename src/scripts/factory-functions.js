@@ -38,6 +38,10 @@ function removeActiveClass(element, classForRemove, classForAdd, classControl) {
 		} else {
 			element[i].classList.remove(classControl);
 		}
+
+		if (!classForAdd) {
+			element[i].classList.remove(classForRemove);
+		}
 	}
 }
 

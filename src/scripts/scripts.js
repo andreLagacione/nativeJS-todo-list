@@ -168,6 +168,7 @@ function toggleTimeTask(buttomControl) {
 
 	var rowSubTask = buttomControl.parentElement.parentElement,
 			categoryTask = rowSubTask.parentElement.previousElementSibling,
+			statusTask = categoryTask.querySelector('.bullet'),
 			statusSubTask = rowSubTask.querySelector('.bullet'),
 			elementTimeInTask = rowSubTask.querySelector('.time.total'),
 			timeInTask = elementTimeInTask.innerHTML.split(':'),
@@ -211,7 +212,7 @@ function toggleTimeTask(buttomControl) {
 
 	if (hasInterval) {
 		countTimeInTask(currentTime, elementTimeInTask, 'intervalTask', statusSubTask);
-		countTimeInTask(totalCurrentTime, controlTimeInTask, 'intervalCategory', statusSubTask);
+		countTimeInTask(totalCurrentTime, controlTimeInTask, 'intervalCategory', statusTask);
 	}
 }
 
